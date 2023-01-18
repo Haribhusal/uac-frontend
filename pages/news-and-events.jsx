@@ -14,15 +14,15 @@ const listing = () => {
         dispatch(fetchPosts());
     }, [dispatch]);
 
-    const data = useSelector((state) => state.posts.data);
-    const status = useSelector((state) => state.posts.status);
+    const newsData = useSelector((state) => state.postsSlice.data);
+    const newsDataStatus = useSelector((state) => state.postsSlice.status);
 
     return (
         <main className='bg-red-50'>
 
             <Banner title="News and Events" currentPage='News and Events' />
             <div className='w-[80%]  mx-auto grid grid-cols-2 gap-5 py-10'>
-                {data.map((item) => (
+                {newsData.map((item) => (
                     <article className="item bg-white shadow-sm p-10 rounded hover:shadow-md transition-all group" key={item.id}>
                         <h3 className="title text-2xl mb-5 font-bold group-hover:text-red-700 transition-all">
                             {item.title.rendered}

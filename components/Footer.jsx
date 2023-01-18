@@ -167,7 +167,7 @@ const Footer = () => {
             <ul className="flex gap-5 sm:flex-col md:flex-row">
               <li>
                 <a href="#" className="">
-                  FAQ's
+                  FAQs
                 </a>
               </li>
               <li>
