@@ -36,6 +36,7 @@ const SingleBlogPostPage = () => {
                   .sizes.large.source_url
               }
               width="700"
+              alt="image details"
               height="400"
               className="rounded-md h-96 mx-auto object-cover"
             />

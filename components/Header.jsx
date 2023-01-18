@@ -84,7 +84,7 @@ const Header = () => {
       <nav className='bg-white shadow-md px-10 py-8  flex justify-between items-center relative'>
         <div className="logo  top-100 flex gap-5 items-center absolute z-50">
           <Link href='/' className='shadow-lg bg-white px-5 py-3 rounded flex items-center justify-center'>
-            <img src="/univa-logo.png" className='h-24' alt="logo of univa" />
+            <Image src={'/univa-logo.png'} height="100" width='100' alt="logo" className='h-24 w-24 object-contain'></Image>
           </Link>
           <Link href='/' className="infowrapper">
 

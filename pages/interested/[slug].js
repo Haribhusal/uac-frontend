@@ -28,7 +28,7 @@ const SingleInterestedPage = () => {
                 <div className="wrapper flex items-center gap-16">
                     <div className="imagearea w-[40%]">
                         <Image src={singleInterestedData[0]?.better_featured_image.media_details.sizes
-                            .large.source_url} width="500" height='800' className="rounded-md" />
+                            .large.source_url} width="500" alt="image details" height='800' className="rounded-md" />
                     </div>
                     <div className="infoArea w-[60%]">
                         <h3 className="title text-red-700 leading-relaxed text-3xl font-bold mb-5">
