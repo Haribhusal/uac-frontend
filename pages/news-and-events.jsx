@@ -15,7 +15,6 @@ const ListingPage = () => {
     }, [dispatch]);
 
     const newsData = useSelector((state) => state.postsSlice.data);
-    const newsDataStatus = useSelector((state) => state.postsSlice.status);
 
     return (
         <main className='bg-red-50'>

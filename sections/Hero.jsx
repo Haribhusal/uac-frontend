@@ -8,8 +8,8 @@ const Hero = () => {
             <div className="imagebanner w-[60%] h-full">
                 <img src="https://picsum.photos/id/110/1000/650" className=" h-full object-cover object-center" alt="" />
             </div>
-            <LatestUpdate/>
-            
+            <LatestUpdate />
+
         </section>
     )
 }

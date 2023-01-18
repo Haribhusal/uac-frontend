@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Image from "next/image";
 import Link from "next/link";
-import MenuData from "./../data/menu.json";
 
 function GraphCMSImageLoader({ src, width }) {
   const relativeSrc = (src) => src.split("/").pop();

@@ -2,15 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchPosts } from "../../store/posts";
 import { useSelector } from "react-redux";
-import Skeleton from "react-loading-skeleton";
-import Router, { useRouter } from "next/router";
-import Banner from "./../../components/Banner";
+import { useRouter } from "next/router";
 import moment from "moment/moment";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 
 const SingleBlogPostPage = () => {
@@ -22,6 +16,7 @@ const SingleBlogPostPage = () => {
   }, [dispatch]);
   const allBlogPosts = useSelector((state) => state.postsSlice.data);
   const singleBlogPostData = allBlogPosts.filter((item) => item.slug == slug);
+
   return (
     <>
       <div className="postWrapper bg-white mx-auto w-[75%] p-10 my-10 border-2 border-dashed rounded-md">

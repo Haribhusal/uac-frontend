@@ -13,7 +13,7 @@ const LatestUpdate = () => {
     }, [dispatch]);
     const postData = useSelector((state) => state.postsSlice.data);
     const postStatus = useSelector((state) => state.postsSlice.status);
-    const latestUpdateData = postData.filter((item)=> item.categories[0] !== 17);
+    const latestUpdateData = postData.filter((item) => item.categories[0] !== 17);
     console.log(postData);
     console.log(latestUpdateData);
     function Box({ children }) {

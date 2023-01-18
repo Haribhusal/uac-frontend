@@ -1,17 +1,10 @@
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchPosts } from "../../store/posts";
 import { useSelector } from "react-redux";
-import Skeleton from "react-loading-skeleton";
-import Router, { useRouter } from "next/router";
-import Banner from "./../../components/Banner";
+import { useRouter } from "next/router";
 import moment from "moment/moment";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 
 const SinglePost = () => {
@@ -21,8 +14,10 @@ const SinglePost = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
+
   const allPosts = useSelector((state) => state.postsSlice.data);
   const singlePostData = allPosts.filter((item) => item.id == id);
+
   return (
     <div className="p-10">
       <div className="container p-10 bg-white rounded border-[1px] border-red-300 border-dashed">
@@ -41,7 +36,6 @@ const SinglePost = () => {
               </div>
             </div>
             <div className="leading-relaxed">
-
             {ReactHtmlParser(singlePostData[0]?.content.rendered)}
             </div>
           </div>
