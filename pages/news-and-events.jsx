@@ -6,7 +6,7 @@ import { fetchPosts } from "../store/posts";
 import { useSelector } from "react-redux";
 import moment from 'moment/moment';
 
-const listing = () => {
+const ListingPage = () => {
     const regex = /(<([^>]+)>)/gi;
 
     const dispatch = useDispatch();
@@ -43,4 +43,4 @@ const listing = () => {
     )
 }
 
-export default listing
+export default ListingPage

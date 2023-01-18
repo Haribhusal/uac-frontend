@@ -28,7 +28,7 @@ const SinglePost = () => {
       <div className="container p-10 bg-white rounded border-[1px] border-red-300 border-dashed">
         <div className="wrapper flex items-center gap-16">
           <div className="imagearea w-[40%]">
-            <Image src={singlePostData[0]?.better_featured_image.source_url} width="500" height='500' className="rounded-md" />
+            <Image src={singlePostData[0]?.better_featured_image.source_url} width="500" height='500' alt="some info" className="rounded-md" />
           </div>
           <div className="infoArea w-[60%]">
             <h3 className="title text-red-700 leading-relaxed text-3xl font-bold mb-5">
