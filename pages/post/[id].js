@@ -32,7 +32,7 @@ const SinglePost = () => {
             <div className="meta bg-red-100 px-5 py-3 mb-5 rounded flex items-center gap-10">
               <div className="item flex items-center gap-2">
                 <i className="las la-calendar"></i>
-                {moment.utc(singlePostData[0].date).local().startOf('seconds').fromNow()}
+                {moment.utc(singlePostData[0]?.date).local().startOf('seconds').fromNow()}
               </div>
             </div>
             <div className="leading-relaxed">
