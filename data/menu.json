@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Home",
+    "link": "/"
+  },
+  {
+    "id": 2,
+    "title": "Student Visa",
+    "link": "/",
+    "submenu": [
+      {
+        "id": 1,
+        "title": "Japan",
+        "link": "/study-in-japan"
+      },
+      {
+        "id": 2,
+        "title": "Korea",
+        "link": "/study-in-korea"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Work Visa",
+    "link": "/",
+    "submenu": [
+      {
+        "id": 1,
+        "title": "Japan",
+        "link": "/work-in-japan"
+      },
+      {
+        "id": 2,
+        "title": "Korea",
+        "link": "/work-in-korea"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Language Classes",
+    "link": "/",
+    "submenu": [
+      {
+        "id": 1,
+        "title": "Japan",
+        "link": "/work-in-japan"
+      },
+      {
+        "id": 2,
+        "title": "Korea",
+        "link": "/work-in-korea"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Why UACKTM?",
+    "link": "/"
+  },
+  {
+    "id": 6,
+    "title": "About",
+    "link": "/",
+    "submenu": [
+      {
+        "id": 1,
+        "title": "Japan",
+        "link": "/work-in-japan"
+      },
+      {
+        "id": 2,
+        "title": "Korea",
+        "link": "/work-in-korea"
+      }
+    ]
+  }
+]
