@@ -31,7 +31,7 @@ const Services = () => {
                     <div className='shadow bg-white p-10 rounded-md text-center group hover:shadow-md transition-all' key={item.id}>
                         <div className="img">
                             <img src={item.better_featured_image.media_details.sizes
-                                .thumbnail.source_url} className='h-36 p-2 group-hover:p-0 group-hover:grayscale transition-all w-36 mx-auto border-2 border-red-700 border-dashed mb-5 rounded-full object-cover object-center' alt="" />
+                            .thumbnail.source_url} className='h-36 p-2 group-hover:p-0 group-hover:grayscale transition-all w-36 mx-auto border-2 border-red-700 border-dashed mb-5 rounded-full object-cover object-center' alt="" />
                         </div>
                         <h3 className="title group-hover:text-red-700 my-5 text-2xl font-bold transition-all">
                             {item.title.rendered}

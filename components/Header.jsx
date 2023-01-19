@@ -82,8 +82,8 @@ const Header = () => {
       </div>
       <nav className='bg-white shadow-md px-10 py-8  flex justify-between items-center relative'>
         <div className="logo  top-100 flex gap-5 items-center absolute z-50">
-          <Link href='/' className='shadow-lg h-32 w-32 bg-white rounded-full px-5 py-3  flex items-center justify-center'>
-            <Image src={'/univa-logo.png'} height="100" width='100' alt="logo" className='h-28 w-28 object-contain'></Image>
+          <Link href='/' className='shadow-lg h-32 w-32 bg-white rounded-full px-3 py-3  flex items-center justify-center'>
+            <Image src={'/univa-logo.png'} priority="true" height="100" width='100' alt="logo" className='h-24 w-24 object-contain'></Image>
           </Link>
           <Link href='/' className="infowrapper">
 
@@ -96,35 +96,35 @@ const Header = () => {
         <div className="left"></div>
         <ul className='flex gap-5'>
           <li>
-            <Link href='/' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               Home
             </Link>
           </li>
           <li>
-            <Link href='/' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/about' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               About
             </Link>
           </li>
           <li>
-            <Link href='/listing' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/listing' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               Working Visa
             </Link>
           </li><li>
-            <Link href='/' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               Study Visa
             </Link>
           </li><li>
-            <Link href='/news-and-events' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/news-and-events' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               News and Events
             </Link>
           </li>
           <li>
-            <Link href='/' className='hover:text-red-700 transition-all py-8 hover:border-b-[2px] border-b-[2px] hover:border-red-700 border-transparent'>
+            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
               Contact
             </Link>
           </li>
           <li>
-            <Link href='https://univa.vercel.app/' target='_blank' className=' px-5 py-3 transition-all rounded text-white bg-red-700 hover:bg-red-500 border-red-700'>
+            <Link href='https://univa.vercel.app/' target='_blank' className=' px-3 py-3 transition-all rounded text-white bg-red-700 hover:bg-red-500 border-red-700'>
               Test Online Exam
             </Link>
           </li>
