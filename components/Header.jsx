@@ -11,11 +11,11 @@ function GraphCMSImageLoader({ src, width }) {
 const Header = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   return (
-    <header className="bg-red-900">
+    <header className="bg-gray-800">
       <div className="text-white text-sm px-10">
         <div className="flex justify-center gap-10">
           <ul className="flex gap-5 items-center">
-            <span className="bg-red-600 px-3 py-2">
+            <span className="bg-gray-600 px-3 py-2">
               Quick Contact
             </span>
             <li className="flex items-center gap-2">
@@ -82,12 +82,12 @@ const Header = () => {
       </div>
       <nav className='bg-white shadow-md px-10 py-8  flex justify-between items-center relative'>
         <div className="logo  top-100 flex gap-5 items-center absolute z-50">
-          <Link href='/' className='shadow-lg bg-white px-5 py-3 rounded flex items-center justify-center'>
-            <Image src={'/univa-logo.png'} height="100" width='100' alt="logo" className='h-24 w-24 object-contain'></Image>
+          <Link href='/' className='shadow-lg h-32 w-32 bg-white rounded-full px-5 py-3  flex items-center justify-center'>
+            <Image src={'/univa-logo.png'} height="100" width='100' alt="logo" className='h-28 w-28 object-contain'></Image>
           </Link>
           <Link href='/' className="infowrapper">
 
-            <h3 className="title text-xl font-bold">
+            <h3 className="title text-xl font-bold text-red-700">
               Univa Education Consultancy
             </h3>
             <span className="text-black">Your Pathway to succeed</span>

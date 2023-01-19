@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchPosts } from "../store/posts";
 import { useSelector } from "react-redux";
 import moment from 'moment/moment';
+import Link from 'next/link';
 
 const ListingPage = () => {
     const regex = /(<([^>]+)>)/gi;
@@ -15,14 +16,16 @@ const ListingPage = () => {
     }, [dispatch]);
 
     const newsData = useSelector((state) => state.postsSlice.data);
+    const onlyNewsData = newsData.filter((item) => item.categories[0] !== 17);
+
 
     return (
         <main className='bg-red-50'>
 
             <Banner title="News and Events" currentPage='News and Events' />
             <div className='w-[80%]  mx-auto grid grid-cols-2 gap-5 py-10'>
-                {newsData.map((item) => (
-                    <article className="item bg-white shadow-sm p-10 rounded hover:shadow-md transition-all group" key={item.id}>
+                {onlyNewsData.map((item) => (
+                    <Link href={`/post/${item.id}`} className="item bg-white shadow-sm p-10 rounded hover:shadow-md transition-all group" key={item.id}>
                         <h3 className="title text-2xl mb-5 font-bold group-hover:text-red-700 transition-all">
                             {item.title.rendered}
                         </h3>
@@ -35,7 +38,7 @@ const ListingPage = () => {
                                 {moment.utc(item.date).local().startOf('seconds').fromNow()}
                             </div>
                         </div>
-                    </article>
+                    </Link>
                 ))}
             </div>
         </main>

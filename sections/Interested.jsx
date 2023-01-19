@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchUserInterests } from "../store/userInterests";
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
+import Image from 'next/image';
 const Interested = () => {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -47,7 +48,7 @@ const Interested = () => {
 
                         <div className="imagewrapper w-[50%]">
                             {activeService === interest.id &&
-                                <img src={interest.better_featured_image.source_url} className='w-full rounded-md' alt="" />
+                            <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500} style={{height: "500px"}} className='w-full rounded-md object-cover'></Image>
                             }
                         </div>
                         {activeService === interest.id &&

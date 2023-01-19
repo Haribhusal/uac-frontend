@@ -14,8 +14,6 @@ const LatestUpdate = () => {
     const postData = useSelector((state) => state.postsSlice.data);
     const postStatus = useSelector((state) => state.postsSlice.status);
     const latestUpdateData = postData.filter((item) => item.categories[0] !== 17);
-    console.log(postData);
-    console.log(latestUpdateData);
     function Box({ children }) {
         return (
             <div
@@ -32,7 +30,7 @@ const LatestUpdate = () => {
                 <h3 className="title">
                     Latest Update
                 </h3>
-                <Link href="/view-all" className="text-sm">View All <i className="las la-angle-right"></i> </Link>
+                <Link href="/news-and-events" className="text-sm">View All <i className="las la-angle-right"></i> </Link>
             </div>
             <div className="items p-5 flex flex-col gap-5">
 
@@ -46,14 +44,11 @@ const LatestUpdate = () => {
                                     <i className="las la-newspaper text-red-700 text-2xl"></i>
                                     <div className="wrap">
 
-                                        <h3 className="title group-hover:text-red-700 leading-6">
-                                            {item.title.rendered.slice(0, 70)}...
+                                        <h3 className="title group-hover:text-red-700 mb-1 leading-relaxed">
+                                            {item.title.rendered.length > 120 ? `${item.title.rendered.slice(0, 120)}...` : item.title.rendered.slice(0, 120) }
+                                            <span className='px-3 py-1 text-sm rounded bg-gray-100'><i className="las la-clock mr-1"></i>
+                                                {moment.utc(item.date).local().startOf('seconds').fromNow()}</span>
                                         </h3>
-                                        <div className="time text-sm flex items-center gap-1">
-                                            <span>Published </span>
-                                            {moment.utc(item.date).local().startOf('seconds').fromNow()}
-
-                                        </div>
                                     </div>
                                 </div>
                             </Link>

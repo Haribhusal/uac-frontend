@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className=" sm:px-3 md:px-10 bg-red-700 text-white py-16">
+      <div className="sm:px-3 md:px-10 bg-red-700 text-white py-16">
         <div className="flex md:flex-row sm:flex-col justify-between items-center sm:items-start">
           <div>
             <h3 className="title text-3xl">
@@ -23,19 +23,19 @@ const Footer = () => {
         </div>
       </div>
       <div className=" sm:px-5 md:px-10 bg-gray-800 py-10 text-slate-400">
-        <div className="flex justify-between sm:flex-col md:flex-row">
-          <div className="item pr-5">
+        <div className="flex justify-between sm:flex-col md:flex-row gap-16">
+          <div className="item flex-[2]">
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
               Univa Education Consultants
             </h3>
-            <p className="info md:w-72 sm:w-full  text-sm text-slate-400 leading-5 mt-5">
+            <p className="info  text-sm text-slate-400 leading-loose mt-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
               sunt? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Quas aspernatur delectus consequuntur Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Cumque, voluptatem?
             </p>
           </div>
-          <div className="item md:px-5 sm:px-0 ">
+          <div className="item flex-[1]">
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
               Contact us:
             </h3>
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="item md:px-5 sm:px-0 ">
+          <div className="item flex-[1]">
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
               Explore
             </h3>
@@ -110,7 +110,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="item md:px-5 sm:px-0 ">
+          <div className="item flex-[2]">
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
               Follow us:
             </h3>

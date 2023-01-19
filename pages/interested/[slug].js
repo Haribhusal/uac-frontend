@@ -28,7 +28,7 @@ const SingleInterestedPage = () => {
           <div className="imagearea w-[40%]">
             <Image
               src={
-                singleInterestedData[0]?.better_featured_image.media_details
+                singleInterestedData[0]?.better_featured_image?.media_details
                   .sizes.large.source_url
               }
               width="500"

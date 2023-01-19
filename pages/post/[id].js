@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, ReactDOM } from "react";
 import { useDispatch } from "react-redux";
 import { fetchPosts } from "../../store/posts";
 import { useSelector } from "react-redux";
@@ -26,7 +26,7 @@ const SinglePost = () => {
             <Image src={singlePostData[0]?.better_featured_image.source_url} width="500" height='500' alt="some info" className="rounded-md" />
           </div>
           <div className="infoArea w-[60%]">
-            <h3 className="title text-red-700 leading-relaxed text-3xl font-bold mb-5">
+            <h3 className="title text-red-700 leading-loose text-3xl font-bold mb-5">
               {singlePostData[0]?.title.rendered}
             </h3>
             <div className="meta bg-red-100 px-5 py-3 mb-5 rounded flex items-center gap-10">
@@ -35,7 +35,7 @@ const SinglePost = () => {
                 {moment.utc(singlePostData[0]?.date).local().startOf('seconds').fromNow()}
               </div>
             </div>
-            <div className="leading-relaxed">
+            <div className="leading-loose">
             {ReactHtmlParser(singlePostData[0]?.content.rendered)}
             </div>
           </div>
