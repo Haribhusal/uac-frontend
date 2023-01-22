@@ -8,20 +8,20 @@ import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 
 const SingleBlogPostPage = () => {
-
   const keyStr =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
   const triplet = (e1, e2, e3) =>
     keyStr.charAt(e1 >> 2) +
     keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
     keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
-    keyStr.charAt(e3 & 63)
+    keyStr.charAt(e3 & 63);
 
   const rgbDataURL = (r, g, b) =>
-    `data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) + triplet(b, 255, 255)
-    }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
-    
+    `data:image/gif;base64,R0lGODlhAQABAPAA${
+      triplet(0, r, g) + triplet(b, 255, 255)
+    }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
+
   const router = useRouter();
   const slug = router.query.slug;
   const dispatch = useDispatch();
@@ -41,25 +41,29 @@ const SingleBlogPostPage = () => {
           <figure>
             <Image
               src={
-                singleBlogPostData[0]?.better_featured_image.media_details
-                  .sizes.large.source_url
+                singleBlogPostData[0]?.better_featured_image.media_details.sizes
+                  .large.source_url
               }
-              placeholder="blur"
-              blurDataURL={rgbDataURL(237, 181, 6)}
               width="700"
               alt="image details"
               height="400"
+              placeholder="blur"
+              blurDataURL="./logo-univa.png"
               className="rounded-md h-96 mx-auto object-cover"
             />
           </figure>
-          <div className="meta my-10 bg-red-100 px-5 py-3 mb-5 rounded flex items-center gap-10">
-            <div className="item flex items-center gap-2">
+          <div className="meta my-10  mb-5 rounded flex mx-auto justify-center items-center gap-10">
+            <div className="item  flex items-center gap-2  bg-red-100 px-5 py-3 rounded-md">
               <i className="las la-calendar"></i>
               {moment
                 .utc(singleBlogPostData[0]?.date)
                 .local()
                 .startOf("seconds")
                 .fromNow()}
+            </div>
+            <div className="item  flex i  tems-center gap-2  bg-red-100 px-5 py-3 rounded-md">
+              <i className="las la-user"></i>
+              Univa
             </div>
           </div>
 
@@ -68,7 +72,6 @@ const SingleBlogPostPage = () => {
           </div>
         </article>
       </div>
-
     </>
   );
 };

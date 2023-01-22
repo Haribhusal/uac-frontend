@@ -9,9 +9,11 @@ import moment from 'moment/moment';
 import Link from 'next/link';
 import Image from 'next/image';
 import ReactHtmlParser from "react-html-parser";
+import Team from '../sections/Team';
 
 
 const AboutPage = () => {
+    
     const router = useRouter();
     const slug = router.pathname
     const pageSlug = slug.replace('/', '');
@@ -25,8 +27,6 @@ const AboutPage = () => {
     const pagesData = useSelector((state) => state.pagesSlice.data);
     const aboutPageData = pagesData.filter((item) => item.slug == pageSlug);
     console.log(aboutPageData)
-
-
 
     return (
         <main className=''>
@@ -45,6 +45,8 @@ const AboutPage = () => {
                 <div className="leading-loose my-10">
                 {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
                 </div>
+            <Team/>
+
             </div>
         </main>
     )

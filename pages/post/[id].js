@@ -23,13 +23,13 @@ const SinglePost = () => {
       <div className="container p-10 bg-white rounded border-[1px] border-red-300 border-dashed">
         <div className="wrapper flex items-start gap-16">
           <div className="imagearea w-[40%]">
-            <Image src={singlePostData[0]?.better_featured_image.source_url} width="500" height='500' alt="some info" className="rounded-md" />
+            <Image src={singlePostData[0]?.better_featured_image.source_url} width="500" height='500' alt="some info" className="rounded-md shadow-md" />
           </div>
           <div className="infoArea w-[60%]">
-            <h3 className="title text-red-700 leading-relaxed text-5xl font-bold mb-5">
+            <h3 className="title text-red-700 leading-snug my-0 text-5xl font-bold mb-5">
               {singlePostData[0]?.title.rendered}
             </h3>
-            <div className="meta bg-red-100 px-5 py-3 mb-5 rounded flex items-center gap-10">
+            <div className="meta bg-red-100 px-5 py-3 mb-5 rounded inline-flex items-center gap-10">
               <div className="item flex items-center gap-2">
                 <i className="las la-calendar"></i>
                 {moment.utc(singlePostData[0]?.date).local().startOf('seconds').fromNow()}

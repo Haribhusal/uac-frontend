@@ -3,11 +3,11 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="sm:px-3 md:px-10 bg-red-700 text-white py-16">
+      <div className="sm:px-3 md:px-10 bg-gray-900 text-white py-10">
         <div className="flex md:flex-row sm:flex-col justify-between items-center sm:items-start">
           <div>
-            <h3 className="title text-3xl">
-              Are you planning to study abroad?
+            <h3 className="title text-3xl mt-0">
+              Are you planning to study/work abroad?
             </h3>
             <p className="text mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
@@ -148,9 +148,9 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter Email"
-                className="px-3 bg-gray-700 text-white w-full py-2 focus:outline-none"
+                className="px-3 border-0 bg-gray-700 w-56 text-white py-2 focus:outline-none"
               />
-              <button className="btn px-3 py-2 bg-red-900 w-48">
+              <button className="btn px-3 py-2 bg-gray-900 w-32">
                 Subscribe <i className="las la-arrow-right"></i>
               </button>
             </form>

@@ -41,8 +41,8 @@ const SingleInterestedPage = () => {
             <h3 className="title text-red-700 leading-relaxed text-3xl font-bold mb-5">
               {singleInterestedData[0]?.title.rendered}
             </h3>
-            <div className="meta bg-red-100 px-5 py-3 mb-5 rounded flex items-center gap-10">
-              <div className="item flex items-center gap-2">
+            <div className="meta bg-red-100 px-5 py-3 mb-5 rounded inline-flex items-center gap-10">
+              <div className="item inline-flex  items-center gap-2">
                 <i className="las la-calendar"></i>
                 {moment
                   .utc(singleInterestedData[0]?.date)

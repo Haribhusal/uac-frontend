@@ -11,18 +11,18 @@ function GraphCMSImageLoader({ src, width }) {
 const Header = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   return (
-    <header className="bg-gray-800">
-      <div className="text-white text-sm px-10">
-        <div className="flex justify-center gap-10">
-          <ul className="flex gap-5 items-center">
-            <span className="bg-gray-600 px-3 py-2">
+    <header className="bg-slate-200">
+      <div className="text-slate-800 text-sm px-10">
+        <div className="sm:block md:flex justify-center gap-10">
+          <ul className="sm:block md:flex gap-5 items-center">
+            <span className="bg-slate-100 text-red-700 px-3 py-2">
               Quick Contact
             </span>
             <li className="flex items-center gap-2">
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="las la-map"></i> Adwait Marg, Putalisadak,
                 Kathmandu
@@ -32,7 +32,7 @@ const Header = () => {
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="las la-envelope"></i> info@uacktm.com
               </a>
@@ -41,7 +41,7 @@ const Header = () => {
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="las la-phone"></i> 01-5319152
               </a>
@@ -53,7 +53,7 @@ const Header = () => {
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="lab la-facebook-f"></i>
               </a>
@@ -62,7 +62,7 @@ const Header = () => {
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="lab la-linkedin"></i>
               </a>
@@ -72,7 +72,7 @@ const Header = () => {
               <a
                 href="#"
                 target="_blank"
-                className="block transition-all py-2 hover:text-gray-300"
+                className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="lab la-youtube"></i>
               </a>
@@ -80,46 +80,46 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <nav className='bg-white shadow-md px-10 py-8  flex justify-between items-center relative'>
-        <div className="logo  top-100 flex gap-5 items-center absolute z-50">
-          <Link href='/' className='shadow-lg h-32 w-32 bg-white rounded-full px-3 py-3  flex items-center justify-center'>
-            <Image src={'/univa-logo.png'} priority="true" height="100" width='100' alt="logo" className='h-24 w-24 object-contain'></Image>
-          </Link>
-          <Link href='/' className="infowrapper">
+      <nav className='bg-white shadow-md px-10 py-8  sm:block md:flex justify-between items-center md:relative sm:static'>
+        <div className="logo  top-100 flex gap-5 items-center md:absolute z-50 sm:static">
+          <Link href='/' className='flex sm:flex-col md:flex-row items-center gap-5'>
+            <div className="imagewrapper shadow-lg sm:h-24 sm:w-24 md:h-32 md:w-32  bg-white rounded-full px-3 py-3  md:flex sm:block items-center justify-center">
 
-            <h3 className="title text-xl font-bold text-red-700">
-              Univa Education Consultancy
-            </h3>
-            <span className="text-black">Your Pathway to succeed</span>
+              <Image src={'/univa-logo.png'} priority="true" height="100" width='100' alt="logo" className='h-24 w-24 object-contain'></Image>
+            </div>
+            <div className="infowrapper">
+              <h3 className="title text-xl my-0 font-bold text-red-700">
+                Univa Education Consultancy
+              </h3>
+              <span className="text-black">Your Pathway to succeed</span>
+            </div>
           </Link>
+
         </div>
         <div className="left"></div>
-        <ul className='flex gap-5'>
+        <ul className='sm:block md:flex gap-5'>
           <li>
-            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
+            <Link href='/' className='hover:text-red-700 font-bold'>
               Home
             </Link>
           </li>
           <li>
-            <Link href='/about' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
+            <Link href='/about' className='hover:text-red-700 font-bold'>
               About
             </Link>
           </li>
           <li>
-            <Link href='/listing' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
-              Working Visa
+            <Link href='/#interest' className='hover:text-red-700 font-bold'>
+              Services
             </Link>
-          </li><li>
-            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
-              Study Visa
-            </Link>
-          </li><li>
-            <Link href='/news-and-events' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
+          </li>
+          <li>
+            <Link href='/news-and-events' className='hover:text-red-700 font-bold'>
               News and Events
             </Link>
           </li>
           <li>
-            <Link href='/' className='px-3 py-3 rounded-md hover:text-red-700 hover:bg-red-100 transition-all'>
+            <Link href='/contact' className='hover:text-red-700 font-bold'>
               Contact
             </Link>
           </li>

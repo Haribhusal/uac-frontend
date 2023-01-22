@@ -11,7 +11,7 @@ const Interested = () => {
         dispatch(fetchUserInterests());
     }, [dispatch]);
     const userInterestsData = useSelector((state) => state.userInterestsSlice.data);
-    const [activeService, setActiveService] = useState(36);
+    const [activeService, setActiveService] = useState(32);
 
 
     function Box({ children }) {
@@ -24,7 +24,7 @@ const Interested = () => {
         )
     }
     return (
-        <section className="interestSelect bg-red-100 mt-10 px-10 gap-10 py-16 flex items-start min-h-[80vh]">
+        <section id='interest' className="interestSelect bg-red-100 mt-10 px-10 gap-10 py-16 flex items-start min-h-[80vh]">
             <div className="left w-[25%]">
                 <div className="heading mb-5">
                     <h3 className="title text-2xl">You might be interested in</h3>
