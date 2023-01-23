@@ -27,7 +27,7 @@ const LatestUpdate = () => {
     return (
         <div className="quicknews w-[40%] bg-transparent">
             <div className="heading bg-slate-200 px-5 py-3 flex justify-between items-center">
-                <h3 className="title text-xl">
+                <h3 className="title text-base font-bold">
                     Latest Update
                 </h3>
                 <Link href="/news-and-events" className="text-sm">View All <i className="las la-angle-right"></i> </Link>
