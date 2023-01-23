@@ -28,10 +28,10 @@ const ContactForm = () => {
 
         const { error } = await res.json();
         if (error) {
-            console.log(error);
+            // console.log(error);
             return;
         }
-        console.log(fullname, email, subject, message);
+        // console.log(fullname, email, subject, message);
     };
 
 

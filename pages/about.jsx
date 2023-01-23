@@ -26,7 +26,6 @@ const AboutPage = () => {
 
     const pagesData = useSelector((state) => state.pagesSlice.data);
     const aboutPageData = pagesData.filter((item) => item.slug == pageSlug);
-    console.log(aboutPageData)
 
     return (
         <main className=''>

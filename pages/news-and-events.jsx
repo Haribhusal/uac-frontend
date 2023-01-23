@@ -18,7 +18,6 @@ const ListingPage = () => {
 
     const newsData = useSelector((state) => state.postsSlice.data);
     const onlyNewsData = newsData.filter((item) => item.categories[0] !== 17);
-    console.log('newsdata', newsData)
 
 
     return (

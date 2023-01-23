@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from "next/image";
 import Link from "next/link";
+import Router, { useRouter } from 'next/router';
 
 function GraphCMSImageLoader({ src, width }) {
   const relativeSrc = (src) => src.split("/").pop();
@@ -9,6 +10,10 @@ function GraphCMSImageLoader({ src, width }) {
 }
 
 const Header = () => {
+  const router = useRouter();
+  // console.log(router.pathname)
+  const path = router.pathname;
+  console.log(path)
   const [showSubMenu, setShowSubMenu] = useState(false);
   return (
     <header className="bg-slate-200">
@@ -20,7 +25,7 @@ const Header = () => {
             </span>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="https://www.google.com/maps/place/University+Academic+Center+Pvt.+Ltd./@27.7032309,85.3201739,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19a9bde1a17f:0x57da6340fa7a7a05!8m2!3d27.7032323!4d85.3223627"
                 target="_blank"
                 className="block transition-all py-2 hover:text-gray-700"
               >
@@ -30,7 +35,7 @@ const Header = () => {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="mailto:info@uacktm.com"
                 target="_blank"
                 className="block transition-all py-2 hover:text-gray-700"
               >
@@ -39,8 +44,8 @@ const Header = () => {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
-                target="_blank"
+                href="tel:+977-01-5319152"
+                target=""
                 className="block transition-all py-2 hover:text-gray-700"
               >
                 <i className="las la-phone"></i> 01-5319152
@@ -51,7 +56,7 @@ const Header = () => {
             <span>Follow us:</span>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="https://www.facebook.com/univanepal"
                 target="_blank"
                 className="block transition-all py-2 hover:text-gray-700"
               >
@@ -60,7 +65,7 @@ const Header = () => {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/univa-education-consultancy/?viewAsMember=true"
                 target="_blank"
                 className="block transition-all py-2 hover:text-gray-700"
               >
@@ -99,27 +104,27 @@ const Header = () => {
         <div className="left"></div>
         <ul className='sm:block md:flex gap-5'>
           <li>
-            <Link href='/' className='hover:text-red-700 font-bold'>
-              Home
+            <Link href='/' className={`hover:text-red-700 font-bold ${path == '/' ? 'text-slate-700' : ''}`}>
+              <i className="las la-home"></i>
             </Link>
           </li>
           <li>
-            <Link href='/about' className='hover:text-red-700 font-bold'>
+            <Link href='/about' className={`hover:text-red-700 font-bold ${path == '/about' ? 'text-red-700' : 'text-slate-700'}`}>
               About
             </Link>
           </li>
           <li>
-            <Link href='/#interest' className='hover:text-red-700 font-bold'>
+            <Link href='/#interest' className={`hover:text-red-700 font-bold ${path == '/home' ? 'text-red-700' : 'text-slate-700'}`}>
               Services
             </Link>
           </li>
           <li>
-            <Link href='/news-and-events' className='hover:text-red-700 font-bold'>
+            <Link href='/news-and-events' className={`hover:text-red-700 font-bold ${path == '/news-and-events' ? 'text-red-700' : 'text-slate-700'}`}>
               News and Events
             </Link>
           </li>
           <li>
-            <Link href='/contact' className='hover:text-red-700 font-bold'>
+            <Link href='/contact' className={`hover:text-red-700 font-bold ${path == '/contact' ? 'text-red-700' : 'text-slate-700'}`}>
               Contact
             </Link>
           </li>

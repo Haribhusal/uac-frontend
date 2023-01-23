@@ -27,7 +27,6 @@ const Team = () => {
     }, [dispatch]);
     const teamData = useSelector((state) => state.teamSlice.data);
     const teamDataStatus = useSelector((state) => state.teamSlice.status);
-    console.log(teamData);
 
 
     return (
