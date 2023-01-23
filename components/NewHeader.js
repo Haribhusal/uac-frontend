@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const solutions = [
   {
@@ -90,7 +91,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="https://www.google.com/maps/place/University+Academic+Center+Pvt.+Ltd./@27.7032309,85.3201739,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19a9bde1a17f:0x57da6340fa7a7a05!8m2!3d27.7032323!4d85.3223627"
-                target="_blank"
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="las la-map"></i> Adwait Marg, Putalisadak,
@@ -100,7 +100,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="mailto:info@uacktm.com"
-                target="_blank"
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="las la-envelope"></i> info@uacktm.com
@@ -109,7 +108,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="tel:+977-01-5319152"
-                target=""
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="las la-phone"></i> 01-5319152
@@ -121,7 +119,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="https://www.facebook.com/univanepal"
-                target="_blank"
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="lab la-facebook-f"></i>
@@ -130,7 +127,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="https://www.linkedin.com/company/univa-education-consultancy/?viewAsMember=true"
-                target="_blank"
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="lab la-linkedin"></i>
@@ -140,7 +136,6 @@ export default function Example() {
             <li className="flex items-center gap-2">
               <a
                 href="#"
-                target="_blank"
                 className="block transition-all py-2 hover:text-gray-500"
               >
                 <i className="lab la-youtube"></i>
@@ -153,10 +148,12 @@ export default function Example() {
         <div className="flex items-center justify-between  md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/" className='flex items-center gap-5 relative'>
-              <img
+              <Image
                 className="sm:h-12  w-auto  md:h-24 bg-white shadow-md left-0 p-3 -translate-x-1/2 absolute z-10 rounded-md"
-                src="./univa-logo.png"
-                alt=""
+                src="/univa-logo.png"
+                alt="logo"
+                height={200}
+                width={200}
               />
               <span className="pl-16 sm:text-base md:text-base font-normal text-slate-200 leading-tight">Univa Education <br/> Consultancy</span>
             </Link>
@@ -318,7 +315,6 @@ export default function Example() {
             </Link>
             <a
               href="https://univa.vercel.app/"
-              target='_blank'
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-red-900 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
             >
               Online Exam
@@ -341,10 +337,12 @@ export default function Example() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
+                  <Image
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="/univa-logo.png"
                     alt="Your Company"
+                    height={100}
+                    width={100}
                   />
                 </div>
                 <div className="-mr-2">
