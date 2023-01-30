@@ -11,6 +11,7 @@ const Services = () => {
     }, [dispatch]);
     const servicesData = useSelector((state) => state.servicesSlice.data);
     const servicesFetchStatus = useSelector((state) => state.servicesSlice.status);
+    console.log('servicesData', servicesData)
 
 
     function Box({ children }) {

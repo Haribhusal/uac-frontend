@@ -25,7 +25,7 @@ const Blog = () => {
         )
     }
     return (
-        <section className="blog">
+        <section className="blog" id='blog'>
             <div className="imageBanner relative">
                 {/* <div className="overlay absolute top-0 left-0 h-full w-full bg-black opacity-70"></div> */}
                 <div className="bgBanner w-full object-cover object-center" style={{height: '60vh'}}>

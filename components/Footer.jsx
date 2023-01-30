@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -14,12 +15,12 @@ const Footer = () => {
               ut!
             </p>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="bg-red-600 shadow-lg hover:shadow-sm transition-all sm:mt-5 md:mt-0 px-10 h-16 py-5 rounded flex items-center"
           >
             Send your Query <i className="las la-arrow-right ml-3"></i>
-          </a>
+          </Link>
         </div>
       </div>
       <div className=" sm:px-5 md:px-10 bg-gray-800 py-10 text-slate-400">
@@ -42,24 +43,24 @@ const Footer = () => {
             <ul className="text-sm mt-6">
               <li className="my-3">
                 <i className="las la-map"></i>{" "}
-                <span>New Baneshwor, Kathmandu</span>
+                <span>Adwait Marg, Putalisadak, Kathmandu, Nepal - Near Shankardev Campus</span>
               </li>
               <li className="my-3">
-                <a href="#">
+                <Link href="mailto:info@uacktm.com">
                   <i className="las la-envelope"></i>{" "}
                   <span>info@uacktm.com</span>
-                </a>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
-                  <i className="las la-phone"></i> <span>+977-98XXXXXXXX</span>
-                </a>
+                <Link href="tel:+977-01-5319152">
+                  <i className="las la-phone"></i> <span> +977-01-5319152</span>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
+                <p href="#">
                   <i className="las la-calendar"></i>{" "}
                   <span>Business Hours: 9AM-5PM</span>
-                </a>
+                </p>
               </li>
             </ul>
           </div>
@@ -69,44 +70,44 @@ const Footer = () => {
             </h3>
             <ul className="text-sm mt-6">
               <li className="my-3">
-                <a href="#">
+                <Link href="/about">
                   <i className="las la-arrow-right mr-2"></i>{" "}
                   <span className="hover:ml-1 transition-all hover:text-white">
                     About us
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
+                <Link href="/news-and-events">
                   <i className="las la-arrow-right mr-2"></i>{" "}
                   <span className="hover:ml-1 transition-all hover:text-white">
-                    Get listed with us
+                    News and Events
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
+                <Link href="/#interest">
                   <i className="las la-arrow-right mr-2"></i>{" "}
                   <span className="hover:ml-1 transition-all hover:text-white">
-                    Why Univa
+                    Services
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
+                <Link href="/#blog">
                   <i className="las la-arrow-right mr-2"></i>{" "}
                   <span className="hover:ml-1 transition-all hover:text-white">
-                    Our Solutions
+                   Read Our Blog
                   </span>
-                </a>
+                </Link>
               </li>
               <li className="my-3">
-                <a href="#">
+                <Link href="/contact">
                   <i className="las la-arrow-right mr-2"></i>{" "}
                   <span className="hover:ml-1 transition-all hover:text-white">
                     Contact Us
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -116,29 +117,21 @@ const Footer = () => {
             </h3>
             <ul className="mt-5 text-2xl flex gap-4">
               <li>
-                <a href="#">
+                <Link href="https://www.facebook.com/univanepal">
                   <i className="lab la-facebook"></i>
-                </a>
+                </Link>
               </li>
+             
               <li>
-                <a href="#">
-                  <i className="lab la-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <Link href="https://www.linkedin.com/company/univa-education-consultancy/?viewAsMember=true">
                   <i className="lab la-linkedin"></i>
-                </a>
+                </Link>
               </li>
+             
               <li>
-                <a href="#">
-                  <i className="lab la-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <Link href="mailto:info@uacktm.com">
                   <i className="las la-envelope"></i>
-                </a>
+                </Link>
               </li>
             </ul>
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
@@ -166,24 +159,24 @@ const Footer = () => {
           <div className="item">
             <ul className="flex gap-5 sm:flex-col md:flex-row">
               <li>
-                <a href="#" className="">
+                <Link href="#" className="">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="">
+                <Link href="#" className="">
                   Terms and Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="">
+                <Link href="#" className="">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="item">
-            Designed by <a href="#">Hari</a>
+            Designed by <Link href="#">Hari</Link>
           </div>
         </div>
       </div>

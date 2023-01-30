@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
-import 'tailwindcss/tailwind.css'
 import { Provider } from "react-redux";
 import 'react-loading-skeleton/dist/skeleton.css'
+import 'tailwindcss/tailwind.css'
 
 import store from "../store";
 

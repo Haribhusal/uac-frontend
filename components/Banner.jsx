@@ -9,7 +9,7 @@ const Banner = ({ title, currentPage }) => {
               
                 </div>
             <div className="heading absolute top-24 text-center w-full flex flex-col justify-center items-center">
-                <h3 className="title capitalize text-white z-40 text-5xl font-black">
+                <h3 className="title capitalize text-white z-10 text-5xl font-black">
                     {title}
                 </h3>
                 <div className="breadcrumb text-white flex gap-3 py-3">

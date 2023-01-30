@@ -39,7 +39,7 @@ const LatestUpdate = () => {
                     :
                     (
                         latestUpdateData.slice(0, 5).map((item) => (
-                            <Link href={`/post/${item.id}`} key={item.id} className="group rounded-md border-gray-500 bg-white">
+                            <Link href={`/post/${item.id}`} key={item.id} className="group rounded-md border-gray-700 hover:border-red-700 bg-white border-l-[3px] ">
                                 <div className="linkwrapper rounded bg-white  shadow hover:shadow-md transition-all py-3 px-5 flex gap-3 items-start">
                                     <i className="las la-newspaper text-gray-700 text-2xl"></i>
                                     <div className="wrap">

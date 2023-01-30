@@ -58,7 +58,7 @@ const SingleInterestedPage = () => {
         </div>
       </div>
 
-      <div className="container mt-5 p-10 bg-white rounded border-[1px] border-red-300 border-dashed">
+      <div className="container mt-5 p-10 bg-red-100 rounded border-[1px] border-red-300 border-dashed">
         <div className="top">
           <h3 className="text-3xl font-bold">
             If you are interested, please let us know
@@ -67,38 +67,38 @@ const SingleInterestedPage = () => {
         <div className="form">
           <form action="">
             <div className="row flex gap-10 mb-5">
-              <div className="form-group flex-1 flex flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex-1 flex flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="name">Your Name</label>
                 <input
                   type="text"
                   id="name"
                   placeholder="Enter Your Name"
-                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none"
+                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
                 />
               </div>
-              <div className="form-group flex flex-1 flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="address">Your Address</label>
                 <input
                   type="text"
                   id="address"
                   placeholder="Enter Your Address"
-                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none"
+                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
                 />
               </div>
-              <div className="form-group flex flex-1 flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="cnum">Your Contact Number</label>
                 <input
                   type="tel"
                   id="cnum"
                   placeholder="Enter Your Contact Number"
-                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none"
+                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
                 />
               </div>
             </div>
             <div className="row flex gap-10 mb-5">
-              <div className="form-group flex-1 flex flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex-1 flex flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="name">Interested Country</label>
-                <select className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none">
+                <select className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm">
                   <option value="Select Interested Country" selected disabled>
                     Select Interested Country
                   </option>
@@ -107,9 +107,9 @@ const SingleInterestedPage = () => {
                   <option value="malta">Malta</option>
                 </select>
               </div>
-              <div className="form-group flex flex-1 flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="address">Visa Type</label>
-                <select className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none">
+                <select className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm">
                   <option value="Select Interested Country" selected disabled>
                     Work / Study / Tourist
                   </option>
@@ -118,13 +118,13 @@ const SingleInterestedPage = () => {
                   <option value="malta">Tourist</option>
                 </select>{" "}
               </div>
-              <div className="form-group flex flex-1 flex-col bg-red-100 p-5 rounded-md gap-2 mt-5">
+              <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="cnum">Set your visiting date</label>
                 <input
                   type="date"
                   id="cnum"
                   placeholder="Visiting Date"
-                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-none"
+                  className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
                 />
               </div>
             </div>

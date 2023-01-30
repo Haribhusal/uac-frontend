@@ -5,6 +5,8 @@ import { fetchUserInterests } from "../store/userInterests";
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 import Image from 'next/image';
+import ReactCSSTransitionGroup from 'react-transition-group'; // ES6
+
 const Interested = () => {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -24,10 +26,10 @@ const Interested = () => {
         )
     }
     return (
-        <section id='interest' className="interestSelect bg-red-100 mt-10 px-10 gap-10 py-16 flex items-start min-h-[80vh]">
-            <div className="left w-[25%]">
+        <section id='interest' className="interestSelect bg-red-100 mt-10 px-10 gap-10 py-16 flex items-center min-h-[80vh]">
+            <div className="left  shadow-lg w-[25%] bg-white p-10 rounded-md">
                 <div className="heading mb-5">
-                    <h3 className="title text-2xl">You might be interested in</h3>
+                    <h3 className="title text-xl">You might be interested in</h3>
                 </div>
                 <div className="options flex flex-col gap-3">
                     {userInterestsData?.length > 0 && userInterestsData.map((interest, index) => (
@@ -46,15 +48,12 @@ const Interested = () => {
                 {userInterestsData?.length > 0 && userInterestsData.map((interest, index) => (
                     <div className='flex items-center' key={index}>
 
-                        <div className="imagewrapper w-[50%]">
-                            {activeService === interest.id &&
-                            <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500} style={{height: "500px"}} className='w-full rounded-md object-cover'></Image>
-                            }
-                        </div>
+
                         {activeService === interest.id &&
 
-                            <div className="info shadow-md rounded relative z-30 p-10 bg-white h-[50%] w-[50%] ">
+                            <div className="info shadow-md rounded relative z-30 p-10 bg-white h-[50%] w-[60%] ">
 
+                                
                                 <div className="heading">
                                     <h3 className="title text-3xl font-bold text-red-700 leading-normal">
                                         {interest.title.rendered}
@@ -65,7 +64,7 @@ const Interested = () => {
                                     </div>
                                     <div className="actions flex gap-6">
                                         <Link href={`interested/${interest.slug}`}>
-                                            <button className='btn rounded px-5 py-3 bg-red-700 text-white shadow-md border-[1px] border-red-700'>Find More Information</button>
+                                            <button className='btn rounded px-5 py-3 bg-red-100 text-red-700 border-red-100'>Find More Information</button>
                                         </Link>
 
 
@@ -73,6 +72,12 @@ const Interested = () => {
                                 </div>
                             </div>
                         }
+                        <div className="imagewrapper w-[40%]">
+                            {activeService === interest.id &&
+                                <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500} style={{ height: "500px" }} className='w-full rounded-md object-cover'></Image>
+                            }
+                        </div>
+
                     </div>
                 ))}
 
