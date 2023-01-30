@@ -8,6 +8,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { fetchServices } from "../store/services";
 import { fetchUserInterests } from "../store/userInterests";
+import {fetchSettings} from "../store/settings";
+
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 
@@ -19,8 +21,13 @@ export default function Example() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchServices());
+    dispatch(fetchSettings());
     dispatch(fetchUserInterests());
   }, [dispatch]);
+
+  const settingsData = useSelector((state) => state.settingsSlice.data[0]);
+
+  
   const userInterestsData = useSelector(
     (state) => state.userInterestsSlice.data
   );
@@ -39,7 +46,7 @@ export default function Example() {
               href="https://www.google.com/maps/place/University+Academic+Center+Pvt.+Ltd./@27.7032309,85.3201739,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19a9bde1a17f:0x57da6340fa7a7a05!8m2!3d27.7032323!4d85.3223627"
               className="block transition-all py-2 hover:text-gray-200"
             >
-              <i className="las la-map"></i> Adwait Marg, Putalisadak, Kathmandu
+              <i className="las la-map"></i> {settingsData?.acf.company_address}
             </a>
           </li>
           <li className="flex items-center gap-2">
@@ -47,7 +54,7 @@ export default function Example() {
               href="mailto:info@uacktm.com"
               className="block transition-all py-2 hover:text-gray-200"
             >
-              <i className="las la-envelope"></i> info@uacktm.com
+              <i className="las la-envelope"></i> {settingsData?.acf.company_email}
             </a>
           </li>
           <li className="flex items-center gap-2">
@@ -55,7 +62,7 @@ export default function Example() {
               href="tel:+977-01-5319152"
               className="block transition-all py-2 hover:text-gray-200"
             >
-              <i className="las la-phone"></i> 01-5319152
+              <i className="las la-phone"></i> {settingsData?.acf.company_contact_1}
             </a>
           </li>
         </ul>
@@ -301,7 +308,7 @@ export default function Example() {
                     Sign up
                   </a>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
-                    Existing customer?{" "}
+                    Existing customer?
                     <a
                       href="#"
                       className="text-indigo-600 hover:text-indigo-500"

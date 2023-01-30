@@ -116,7 +116,7 @@ const SingleInterestedPage = () => {
                   <option value="japan">Work</option>
                   <option value="korea">Study</option>
                   <option value="malta">Tourist</option>
-                </select>{" "}
+                </select>
               </div>
               <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
                 <label htmlFor="cnum">Set your visiting date</label>

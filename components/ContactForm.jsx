@@ -34,7 +34,7 @@ const ContactForm = () => {
 
             <h1 class="text-2xl font-bold dark:text-gray-50">Send a message</h1>
 
-            <label htmlFor="fullName" class="text-gray-500 font-light mt-8 dark:text-gray-50">Full Name<span class="text-red-500 dark:text-gray-50">*</span></label>
+            <label htmlFor="fullName" class="mb-2 text-gray-500 font-light mt-4 dark:text-gray-50">Full Name<span class="text-red-500 dark:text-gray-50">*</span></label>
             <input
                 required
                 id='fullName'
@@ -42,10 +42,10 @@ const ContactForm = () => {
                 value={values.fullName}
                 onChange={handleChange}
                 type='text'
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                className="bg-transparent border-slate-300 rounded-md py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-0 font-light text-gray-500"
             />
 
-            <label htmlFor="subject" class="text-gray-500 font-light mt-8 dark:text-gray-50">Subject<span class="text-red-500 dark:text-gray-50">*</span></label>
+            <label htmlFor="subject" class="mb-2 text-gray-500 font-light mt-4 dark:text-gray-50">Subject<span class="text-red-500 dark:text-gray-50">*</span></label>
             <input
                 required
                 id='subject'
@@ -53,18 +53,18 @@ const ContactForm = () => {
                 value={values.subject}
                 onChange={handleChange}
                 type='text'
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                className="bg-transparent border-slate-300 rounded-md py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-0 font-light text-gray-500"
 
             />
-            <label for="message" class="text-gray-500 font-light mt-4 dark:text-gray-50">Your Message<span class="text-red-500">*</span></label>
+            <label for="message" class="mb-2 text-gray-500 font-light mt-4 dark:text-gray-50">Your Message<span class="text-red-500">*</span></label>
             <textarea
                 required
                 placeholder='Enter your Message'
                 value={values.message}
                 onChange={handleChange}
                 id='message'
-                rows={8}
-                className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                rows={4}
+                className="bg-transparent border-slate-300 rounded-md py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-0 font-light text-gray-500"
 
             />
             {responseMessage.message &&
