@@ -193,6 +193,7 @@ export default function Example() {
                               <Link
                                 href={`/interested/${item.slug}`}
                                 key={item.id}
+
                               >
                                 <article className="wrapper flex gap-5 bg-white rounded-md group hover:bg-red-100 px-5 py-3 items-start transition-all">
                                   <i className="las la-briefcase  transition-all bg-red-100 text-red-900 p-3 rounded-md items-center group-hover:bg-red-900 group-hover:text-white"></i>
@@ -226,7 +227,7 @@ export default function Example() {
               </Link>
               <a
                 href="https://univa.vercel.app/"
-                className=" bg-red-100 text-red-700 transition-all ml-8  px-7 py-3 text-base font-medium"
+                className=" border-[1px] border-red-700 rounded-md text-red-700 transition-all ml-8  px-7 py-3 text-base font-medium"
               >
                 Online Exam
               </a>
