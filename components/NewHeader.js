@@ -1,68 +1,15 @@
-import { useState, useEffect, Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import Image from "next/image";
+
+import { useEffect, Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { fetchServices } from "../store/services";
 import { fetchUserInterests } from "../store/userInterests";
-
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
-
-
-const solutions = [
-  {
-    name: "Analytics",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers' data will be safe and secure.",
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools that you're already using.",
-    href: "#",
-    icon: Squares2X2Icon,
-  },
-  {
-    name: "Automations",
-    description:
-      "Build strategic funnels that will drive your customers to convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch Demo", href: "#", icon: PlayIcon },
-  { name: "Contact Sales", href: "#", icon: PhoneIcon },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -73,14 +20,15 @@ export default function Example() {
   useEffect(() => {
     dispatch(fetchServices());
     dispatch(fetchUserInterests());
-
   }, [dispatch]);
-  const userInterestsData = useSelector((state) => state.userInterestsSlice.data);
-  console.log('userInterestsData', userInterestsData)
+  const userInterestsData = useSelector(
+    (state) => state.userInterestsSlice.data
+  );
+  console.log("userInterestsData", userInterestsData);
   const servicesData = useSelector((state) => state.servicesSlice.data);
-  const servicesFetchStatus = useSelector((state) => state.servicesSlice.status);
-  console.log('servicesData', servicesData)
-
+  const servicesFetchStatus = useSelector(
+    (state) => state.servicesSlice.status
+  );
 
   return (
     <>
@@ -182,7 +130,6 @@ export default function Example() {
                             {servicesData.map((item) => (
                               <div
                                 key={item.id}
-
                                 className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                               >
                                 <i className="las la-briefcase bg-red-100 p-2 rounded-md text-2xl text-red-600"></i>
@@ -203,7 +150,6 @@ export default function Example() {
                   </>
                 )}
               </Popover>
-
 
               <Link
                 href="/news-and-events"
@@ -244,39 +190,26 @@ export default function Example() {
                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                           <div className="relative grid bg-white p-5">
                             {userInterestsData.map((item) => (
-                              <Link href={`/interested/${item.slug}`}>
+                              <Link
+                                href={`/interested/${item.slug}`}
+                                key={item.id}
+                              >
                                 <article className="wrapper flex gap-5 bg-white rounded-md group hover:bg-red-100 px-5 py-3 items-start transition-all">
                                   <i className="las la-briefcase  transition-all bg-red-100 text-red-900 p-3 rounded-md items-center group-hover:bg-red-900 group-hover:text-white"></i>
                                   <div className="info">
-
-                                  <h1 className=" font-bold text-red-900">{item.title.rendered}</h1>
-                                  <p className="text-slate-500 text-sm">{ReactHtmlParser(item.excerpt.rendered.slice(0, 80))}</p>
+                                    <h1 className=" font-bold text-red-900">
+                                      {item.title.rendered}
+                                    </h1>
+                                    <p className="text-slate-500 text-sm">
+                                      {ReactHtmlParser(
+                                        item.excerpt.rendered.slice(0, 80)
+                                      )}
+                                    </p>
                                   </div>
                                 </article>
                               </Link>
                             ))}
-                            {/* {userInterestsData.map((item) => (
-                              <a
-                                key={item.id}
-                                href={`/interested/${item.slug}`}
-                                className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                              >
-                                <item.icon
-                                  className="h-6 w-6 flex-shrink-0 text-indigo-600"
-                                  aria-hidden="true"
-                                />
-                                <div className="ml-4">
-                                  <p className="text-base font-medium text-gray-900">
-                                    {item.title.rendered}
-                                  </p>
-                                  <p className="mt-1 text-sm text-gray-500">
-                                    {item.excerpt.rendered}
-                                  </p>
-                                </div>
-                              </a>
-                            ))} */}
                           </div>
-
                         </div>
                       </Popover.Panel>
                     </Transition>
