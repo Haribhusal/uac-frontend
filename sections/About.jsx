@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import CallBack from './../components/CallBack'
 
 const About = () => {
     return (
@@ -22,11 +23,7 @@ const About = () => {
                 <div className="heading font-bold text-xl">
                     Do you want a call from Univa Education Consultancy?
                 </div>
-                <form action="" className="flex mt-5 gap-6">
-                    <input type="tel" placeholder="Enter your phone number" className="border-[1px] rounded focus:border-[1px] focus:border-red-400 focus:outline-none outline-none w-1/2" />
-                    <button className="bg-red-700 hover:bg-gray-700 transition-all px-5 text-white rounded">Get a callback</button>
-
-                </form>
+                <CallBack/>
             </div>
 
         </section>

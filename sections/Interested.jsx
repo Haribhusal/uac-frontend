@@ -5,7 +5,6 @@ import { fetchUserInterests } from "../store/userInterests";
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 import Image from 'next/image';
-import ReactCSSTransitionGroup from 'react-transition-group'; // ES6
 
 const Interested = () => {
     const dispatch = useDispatch();
@@ -47,20 +46,14 @@ const Interested = () => {
             <div className="right w-[75%] ">
                 {userInterestsData?.length > 0 && userInterestsData.map((interest, index) => (
                     <div className='flex items-center' key={index}>
-
-
                         {activeService === interest.id &&
-
-                            <div className="info shadow-md rounded relative z-30 p-10 bg-white h-[50%] w-[60%] ">
-
-                                
+                            <div className="info shadow-md rounded relative z-30 p-10 bg-white w-[60%] ">
                                 <div className="heading">
                                     <h3 className="title text-3xl font-bold text-red-700 leading-normal">
                                         {interest.title.rendered}
                                     </h3>
                                     <div className="info my-6 leading-loose">
-
-                                        {ReactHtmlParser(interest.excerpt.rendered)}
+                                        {ReactHtmlParser(interest.excerpt.rendered.slice(0, 500))}
                                     </div>
                                     <div className="actions flex gap-6">
                                         <Link href={`interested/${interest.slug}`}>

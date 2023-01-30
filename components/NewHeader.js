@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
@@ -19,6 +19,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { fetchServices } from "../store/services";
+import { fetchUserInterests } from "../store/userInterests";
+
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 
@@ -61,44 +63,6 @@ const callsToAction = [
   { name: "Watch Demo", href: "#", icon: PlayIcon },
   { name: "Contact Sales", href: "#", icon: PhoneIcon },
 ];
-const resources = [
-  {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
-    href: "#",
-    icon: LifebuoyIcon,
-  },
-  {
-    name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
-    href: "#",
-    icon: BookmarkSquareIcon,
-  },
-  {
-    name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
-    icon: ShieldCheckIcon,
-  },
-];
-const recentPosts = [
-  { id: 1, name: "Boost your conversion rate", href: "#" },
-  {
-    id: 2,
-    name: "How to use search engine optimization to drive traffic to your site",
-    href: "#",
-  },
-  { id: 3, name: "Improve your customer experience", href: "#" },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -107,8 +71,12 @@ function classNames(...classes) {
 export default function Example() {
   const dispatch = useDispatch();
   useEffect(() => {
-      dispatch(fetchServices());
+    dispatch(fetchServices());
+    dispatch(fetchUserInterests());
+
   }, [dispatch]);
+  const userInterestsData = useSelector((state) => state.userInterestsSlice.data);
+  console.log('userInterestsData', userInterestsData)
   const servicesData = useSelector((state) => state.servicesSlice.data);
   const servicesFetchStatus = useSelector((state) => state.servicesSlice.status);
   console.log('servicesData', servicesData)
@@ -168,6 +136,18 @@ export default function Example() {
               </Popover.Button>
             </div>
             <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+              <Link
+                href="/"
+                className="text-base font-medium text-gray-800 hover:text-red-700 py-6"
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="text-base font-medium text-gray-800 hover:text-red-700 py-6"
+              >
+                About Univa
+              </Link>
               <Popover className="relative">
                 {({ open }) => (
                   <>
@@ -202,7 +182,7 @@ export default function Example() {
                             {servicesData.map((item) => (
                               <div
                                 key={item.id}
-                                
+
                                 className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                               >
                                 <i className="las la-briefcase bg-red-100 p-2 rounded-md text-2xl text-red-600"></i>
@@ -224,12 +204,7 @@ export default function Example() {
                 )}
               </Popover>
 
-              <Link
-                href="/about"
-                className="text-base font-medium text-gray-800 hover:text-red-700 py-6"
-              >
-                About Univa
-              </Link>
+
               <Link
                 href="/news-and-events"
                 className="text-base font-medium text-gray-800 hover:text-red-700 py-6"
@@ -246,7 +221,7 @@ export default function Example() {
                         "group inline-flex items-center rounded-md text-base focus:ring-0 font-medium focus:outline-none hover:text-gray-600"
                       )}
                     >
-                      <span className="py-6">More</span>
+                      <span className="py-6">Study/Work</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-800" : "text-gray-600",
@@ -267,11 +242,23 @@ export default function Example() {
                     >
                       <Popover.Panel className="absolute left-1/2 z-20 mt-0 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                          <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                            {resources.map((item) => (
+                          <div className="relative grid bg-white p-5">
+                            {userInterestsData.map((item) => (
+                              <Link href={`/interested/${item.slug}`}>
+                                <article className="wrapper flex gap-5 bg-white rounded-md group hover:bg-red-100 px-5 py-3 items-start transition-all">
+                                  <i className="las la-briefcase  transition-all bg-red-100 text-red-900 p-3 rounded-md items-center group-hover:bg-red-900 group-hover:text-white"></i>
+                                  <div className="info">
+
+                                  <h1 className=" font-bold text-red-900">{item.title.rendered}</h1>
+                                  <p className="text-slate-500 text-sm">{ReactHtmlParser(item.excerpt.rendered.slice(0, 80))}</p>
+                                  </div>
+                                </article>
+                              </Link>
+                            ))}
+                            {/* {userInterestsData.map((item) => (
                               <a
-                                key={item.name}
-                                href={item.href}
+                                key={item.id}
+                                href={`/interested/${item.slug}`}
                                 className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                               >
                                 <item.icon
@@ -280,46 +267,16 @@ export default function Example() {
                                 />
                                 <div className="ml-4">
                                   <p className="text-base font-medium text-gray-900">
-                                    {item.name}
+                                    {item.title.rendered}
                                   </p>
                                   <p className="mt-1 text-sm text-gray-500">
-                                    {item.description}
+                                    {item.excerpt.rendered}
                                   </p>
                                 </div>
                               </a>
-                            ))}
+                            ))} */}
                           </div>
-                          <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
-                            <div>
-                              <h3 className="text-base font-medium text-gray-500">
-                                Recent Posts
-                              </h3>
-                              <ul role="list" className="mt-4 space-y-4">
-                                {recentPosts.map((post) => (
-                                  <li
-                                    key={post.id}
-                                    className="truncate text-base"
-                                  >
-                                    <a
-                                      href={post.href}
-                                      className="font-medium text-gray-900 hover:text-gray-700"
-                                    >
-                                      {post.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="mt-5 text-sm">
-                              <a
-                                href="#"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
-                              >
-                                View all posts
-                                <span aria-hidden="true"> &rarr;</span>
-                              </a>
-                            </div>
-                          </div>
+
                         </div>
                       </Popover.Panel>
                     </Transition>
@@ -336,7 +293,7 @@ export default function Example() {
               </Link>
               <a
                 href="https://univa.vercel.app/"
-                className=" bg-slate-100 transition-all ml-8  px-7 py-3 text-base font-medium"
+                className=" bg-red-100 text-red-700 transition-all ml-8  px-7 py-3 text-base font-medium"
               >
                 Online Exam
               </a>
@@ -376,25 +333,6 @@ export default function Example() {
                     </Popover.Button>
                   </div>
                 </div>
-                <div className="mt-6">
-                  <nav className="grid gap-y-8">
-                    {solutions.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
-                      >
-                        <item.icon
-                          className="h-6 w-6 flex-shrink-0 text-indigo-600"
-                          aria-hidden="true"
-                        />
-                        <span className="ml-3 text-base font-medium text-gray-900">
-                          {item.name}
-                        </span>
-                      </a>
-                    ))}
-                  </nav>
-                </div>
               </div>
               <div className="space-y-6 py-6 px-5">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
@@ -411,7 +349,7 @@ export default function Example() {
                   >
                     Docs
                   </a>
-                  {resources.map((item) => (
+                  {/* {resources.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -419,7 +357,7 @@ export default function Example() {
                     >
                       {item.name}
                     </a>
-                  ))}
+                  ))} */}
                 </div>
                 <div>
                   <a

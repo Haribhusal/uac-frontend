@@ -150,7 +150,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="md:px-10 sm:px-3 bg-gray-900 py-3 text-slate-400">
+      <div className="md:px-10 text-sm sm:px-3 bg-gray-900 py-3 text-slate-400">
         <div className="flex justify-between sm:flex-col md:flex-row">
           <div className="item">
             &copy; Univa Educational Consultants, {new Date().getFullYear()},

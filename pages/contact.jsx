@@ -14,7 +14,7 @@ const contact = () => {
                             Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, facilis. consectetur, adipisicing elit. Eaque, minus.
                         </div>
                     </div>
-                    <div className="form flex-[1] pr-10">
+                    <div className="form flex-[1] pr-10 relative">
                         <ContactForm />
                     </div>
                 </div>
