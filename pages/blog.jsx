@@ -25,10 +25,10 @@ const ListingPage = () => {
         <main className='bg-red-50'>
 
             <Banner title="Blog" currentPage='Blog' />
-            <div className='w-[80%]  mx-auto grid grid-cols-1 gap-5 py-10'>
+            <div className='md:w-[80%] w-full  mx-auto grid grid-cols-1 gap-5 py-10'>
                 {blogData.map((item) => (
-                    <Link href={`/post/${item.id}`} className="item bg-white shadow-sm p-10 rounded  transition-all group" key={item.id}>
-                        <div className="wrapper flex items-start gap-10">
+                    <Link href={`/post/${item.id}`} className="item bg-white shadow-sm md:p-10 p-5 rounded  transition-all group" key={item.id}>
+                        <div className="wrapper flex flex-col md:flex-row items-start gap-10">
 
                             <div className="image flex-1 shadow-md rounded-md">
                                 <Image src={item.better_featured_image.media_details.sizes.medium.source_url} height={300} style={{ maxHeight: '200px', height: '100%' }} className="group-hover:shadow-lg  object-cover group-hover:-mr-5 border-slate-400 rounded-md object-center" width={300} alt={item.title.rendered} />

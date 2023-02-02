@@ -30,7 +30,7 @@ const ContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit}
-            class="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500 -mb-20 mt-20">
+            class="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-red-500 -mb-20 md:mt-20 mt-0 ">
 
             <h1 class="text-2xl font-bold dark:text-gray-50">Send a message</h1>
 

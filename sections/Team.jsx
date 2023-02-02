@@ -33,7 +33,7 @@ const Team = () => {
         <section>
             <h3 className="title">Our Team</h3>
 
-            <div className='grid grid-cols-2 gap-10'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-10'>
                 {teamDataStatus == "loading" ?
                     <Skeleton count={3} wrapper={Box} /> // Five-line loading skeleton
                     :

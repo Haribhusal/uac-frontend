@@ -13,7 +13,7 @@ import Team from '../sections/Team';
 
 
 const AboutPage = () => {
-    
+
     const router = useRouter();
     const slug = router.pathname
     const pageSlug = slug.replace('/', '');
@@ -31,20 +31,20 @@ const AboutPage = () => {
         <main className=''>
             <Banner title={aboutPageData[0]?.title.rendered} currentPage={aboutPageData[0]?.title.rendered} />
             {/* pull here all the data */}
-            <div className="mx-auto post-wrapper p-10 w-[60%] my-10 rounded-md shadow-md bg-white">
-            <Image
-              src={
-                aboutPageData[0]?.better_featured_image?.source_url
-              }
-              width="500"
-              alt="image details"
-              height="800"
-              className="rounded-md w-full"
-            />
+            <div className="mx-auto post-wrapper md:p-10 p-5 md:w-[60%] w-full my-10 rounded-md shadow-md bg-white">
+                <Image
+                    src={
+                        aboutPageData[0]?.better_featured_image?.source_url
+                    }
+                    width="500"
+                    alt="image details"
+                    height="800"
+                    className="rounded-md w-full"
+                />
                 <div className="leading-loose my-10 about-page">
-                {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
+                    {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
                 </div>
-            <Team/>
+                <Team />
 
             </div>
         </main>
