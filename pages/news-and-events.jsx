@@ -42,7 +42,7 @@ const ListingPage = () => {
                             <div className="wrapper flex flex-col md:flex-row items-start gap-10">
 
                                 <div className="image flex-1 md:flex-1 shadow-md rounded-md">
-                                    <Image src={item.better_featured_image.media_details.sizes.medium.source_url} height={300} className="h-[250px] md:h-auto  group-hover:shadow-lg object-cover group-hover:-mr-5 md:group-hover:-mr-0 border-slate-400 rounded-md object-center" width={300} alt={item.title.rendered} />
+                                    <Image src={item.better_featured_image.media_details.sizes.medium.source_url} height={300} className="h-[250px] md:h-[auto] w-full  group-hover:shadow-lg object-cover group-hover:-mr-5 md:group-hover:-mr-0 border-slate-400 rounded-md object-center" width={300} alt={item.title.rendered} />
                                 </div>
                                 <div className="info flex-1 md:flex-[5] flex flex-col items-stretch justify-between">
                                     <div className="up">
