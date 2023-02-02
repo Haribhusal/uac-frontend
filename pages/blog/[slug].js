@@ -35,10 +35,10 @@ const SingleBlogPostPage = () => {
   return (
     <>
       <Head>
-        <title>{singleBlogPostData[0].title.rendered}</title>
+        <title>{singleBlogPostData[0]?.title.rendered}</title>
         <meta
           property="og:title"
-          content={singleBlogPostData[0].title.rendered}
+          content={singleBlogPostData[0]?.title.rendered}
           key="title"
         />
         <link rel="icon" href="/univa-logo.png" />

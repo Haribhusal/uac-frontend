@@ -24,10 +24,10 @@ const SinglePost = () => {
   return (
     <>
       <Head>
-        <title>{singlePostData[0].title.rendered}</title>
+        <title>{singlePostData[0]?.title.rendered}</title>
         <meta
           property="og:title"
-          content={singlePostData[0].title.rendered}
+          content={singlePostData[0]?.title.rendered}
           key="title"
         />
         <link rel="icon" href="/univa-logo.png" />
