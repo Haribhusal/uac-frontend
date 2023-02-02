@@ -1,16 +1,26 @@
+import Head from 'next/head'
 import React from 'react'
 import ContactForm from './../components/ContactForm'
 const contact = () => {
     return (
         <>
+            <Head>
+                <title>Contact | Univa Education Consultancy</title>
+                <meta
+                    property="og:title"
+                    content="Contact"
+                    key="title"
+                />
+                <link rel="icon" href="/univa-logo.png" />
+            </Head>
             <section>
                 <div className="wrapper flex flex-col md:flex-row  gap-10 bg-red-100 items-center">
                     <div className="info md:flex-[2] flex-1 p-10">
                         <div className="subhead uppercase text-gray-400 bg-white px-5 inline-block py-3">Contact</div>
-                        <h3 className="title my-5 text-5xl font-black leading-none">
+                        <h3 className="title my-5 text-3xl md:text-5xl font-black leading-none">
                             We can connect and discuss your future...
                         </h3>
-                        <div className="brief text-2xl leading-relaxed text-gray-500">
+                        <div className="brief text-xl md:text-2xl leading-relaxed text-gray-500">
                             Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, facilis. consectetur, adipisicing elit. Eaque, minus.
                         </div>
                     </div>

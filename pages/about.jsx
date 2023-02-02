@@ -10,6 +10,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ReactHtmlParser from "react-html-parser";
 import Team from '../sections/Team';
+import Head from 'next/head';
 
 
 const AboutPage = () => {
@@ -28,26 +29,38 @@ const AboutPage = () => {
     const aboutPageData = pagesData.filter((item) => item.slug == pageSlug);
 
     return (
-        <main className=''>
-            <Banner title={aboutPageData[0]?.title.rendered} currentPage={aboutPageData[0]?.title.rendered} />
-            {/* pull here all the data */}
-            <div className="mx-auto post-wrapper md:p-10 p-5 md:w-[60%] w-full my-10 rounded-md shadow-md bg-white">
-                <Image
-                    src={
-                        aboutPageData[0]?.better_featured_image?.source_url
-                    }
-                    width="500"
-                    alt="image details"
-                    height="800"
-                    className="rounded-md w-full"
+        <>
+            <Head>
+                <title>{aboutPageData[0]?.title.rendered} | Univa Education Consultancy</title>
+                <meta
+                    property="og:title"
+                    content={aboutPageData[0]?.title.rendered}
+                    key="title"
                 />
-                <div className="leading-loose my-10 about-page">
-                    {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
-                </div>
-                <Team />
+                <link rel="icon" href="/univa-logo.png" />
+            </Head>
 
-            </div>
-        </main>
+            <main className=''>
+                <Banner title={aboutPageData[0]?.title.rendered} currentPage={aboutPageData[0]?.title.rendered} />
+                {/* pull here all the data */}
+                <div className="mx-auto post-wrapper md:p-10 p-5 md:w-[60%] w-full my-10 rounded-md shadow-md bg-white">
+                    <Image
+                        src={
+                            aboutPageData[0]?.better_featured_image?.source_url
+                        }
+                        width="500"
+                        alt="image details"
+                        height="800"
+                        className="rounded-md w-full"
+                    />
+                    <div className="leading-loose my-10 about-page">
+                        {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
+                    </div>
+                    <Team />
+
+                </div>
+            </main>
+        </>
     )
 }
 

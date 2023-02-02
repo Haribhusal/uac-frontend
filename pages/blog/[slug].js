@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import moment from "moment/moment";
 import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
+import Head from "next/head";
 
 const SingleBlogPostPage = () => {
   const keyStr =
@@ -33,9 +34,19 @@ const SingleBlogPostPage = () => {
 
   return (
     <>
-      <div className="postWrapper bg-white mx-auto w-[75%] p-10 my-10 border-2 border-dashed rounded-md">
+      <Head>
+        <title>{singleBlogPostData[0].title.rendered}</title>
+        <meta
+          property="og:title"
+          content={singleBlogPostData[0].title.rendered}
+          key="title"
+        />
+        <link rel="icon" href="/univa-logo.png" />
+
+      </Head>
+      <div className="postWrapper bg-white mx-auto w-full md:w-[75%] p-5 md:p-10 my-10 border-2 border-dashed rounded-md">
         <article>
-          <h3 className="title text-center text-red-700 leading-relaxed text-5xl font-bold mb-5">
+          <h3 className="title text-center text-red-700 leading-relaxed text-2xl md:text-5xl font-bold mb-5">
             {singleBlogPostData[0]?.title.rendered}
           </h3>
           <figure>
@@ -52,7 +63,7 @@ const SingleBlogPostPage = () => {
               className="rounded-md h-96 mx-auto object-cover"
             />
           </figure>
-          <div className="meta my-10  mb-5 rounded flex mx-auto justify-center items-center gap-10">
+          <div className="meta my-10  mb-5 rounded flex mx-auto justify-center items-center gap-5 md:gap-10">
             <div className="item  flex items-center gap-2  bg-red-100 px-5 py-3 rounded-md">
               <i className="las la-calendar"></i>
               {moment
@@ -67,7 +78,7 @@ const SingleBlogPostPage = () => {
             </div>
           </div>
 
-          <div className="leading-loose">
+          <div className="leading-loose blog_content">
             {ReactHtmlParser(singleBlogPostData[0]?.content.rendered)}
           </div>
         </article>

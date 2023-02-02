@@ -39,7 +39,7 @@ const CallBack = () => {
                     value={values.contactNumber}
                     onChange={handleChange}
                     type='tel'
-                    className=" md:min-w-[200px]  bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
+                    className="w-full  md:min-w-[200px]  bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
                 />
                 <input
                     required
@@ -48,13 +48,14 @@ const CallBack = () => {
                     value={values.fullName}
                     onChange={handleChange}
                     type='text'
-                    className=" min-w-[200px] bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
+                    className="w-full min-w-[200px] bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
                 />
                 <button
                     disabled={values.contactNumber == '' || values.fullName == ''}
                     onClick={() => setLoading(true)}
-                    type='submit' value='submit' className="px-10 py-2 bg-red-700 gap-3 flex items-center text-gray-50 font-light rounded-md text-lg">
-                        Request a callback
+
+                    type='submit' value='submit' className="px-10 py-2 mx-auto w-full md:w-[200px] text-center justify-center bg-red-700 gap-3 flex items-center text-gray-50 font-light rounded-md text-lg">
+                        Submit
                     <i className={`las ${loading ? "la-spinner animate-spin" : "la-telegram-plane"} `}></i>
                 </button>
             </form >
