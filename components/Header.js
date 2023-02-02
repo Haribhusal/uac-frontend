@@ -105,6 +105,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-white bg-red-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-white"
                   aria-current="page"
                 >
@@ -114,6 +115,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/about"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   About
@@ -122,6 +124,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/#interest"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Services
@@ -130,6 +133,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/news-and-events"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   News and Events
@@ -138,6 +142,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/blog"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Blog
@@ -146,6 +151,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/contact"
+                  onClick={()=>setOpen(!open)}
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Contact

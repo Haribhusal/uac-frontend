@@ -57,7 +57,7 @@ const InterestedForm = () => {
                 value={values.fullName}
                 onChange={handleChange}
                 placeholder="Enter Your Name"
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
               />
             </div>
             <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
@@ -68,7 +68,7 @@ const InterestedForm = () => {
                 value={values.address}
                 onChange={handleChange}
                 placeholder="Enter Your Address"
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
               />
             </div>
             <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
@@ -79,7 +79,7 @@ const InterestedForm = () => {
                 value={values.contactNumber}
                 onChange={handleChange}
                 placeholder="Enter Your Contact Number"
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
               />
             </div>
           </div>
@@ -87,7 +87,7 @@ const InterestedForm = () => {
             <div className="form-group flex-1 flex flex-col bg-white p-5 rounded-md gap-2 mt-5">
               <label htmlFor="country">Interested Country</label>
               <select
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
                 value={values.country}
                 onChange={handleChange}
                 id="country"
@@ -103,7 +103,7 @@ const InterestedForm = () => {
             <div className="form-group flex flex-1 flex-col bg-white p-5 rounded-md gap-2 mt-5">
               <label htmlFor="type">Visa Type</label>
               <select
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
                 value={values.type}
                 onChange={handleChange}
                 id="type"
@@ -124,7 +124,7 @@ const InterestedForm = () => {
                 id="date"
                 type="date"
                 placeholder="Visiting Date"
-                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm"
+                className="focus:outline-none ring-0 focus:border-red-900 focus:shadow-none border-[1px] border-slate-300 rounded-sm w-full"
               />
             </div>
           </div>
