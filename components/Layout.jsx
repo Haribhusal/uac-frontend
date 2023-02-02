@@ -1,12 +1,13 @@
 // components/layout.js
 
 import Footer from "./Footer";
-import NewHeader from "./NewHeader";
+import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
     <>
-      <NewHeader />
+      {/* <NewHeader /> */}
+      <Header/>
       <main style={{ minHeight: '100vh' }}>{children}</main>
       <Footer />
     </>

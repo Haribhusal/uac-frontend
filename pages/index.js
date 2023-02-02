@@ -6,7 +6,7 @@ import Blog from "../sections/Blog";
 import Services from "../sections/Services";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {fetchSettings} from "./../store/settings";
+import { fetchSettings } from "./../store/settings";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ export default function Home() {
     dispatch(fetchSettings());
   }, [dispatch]);
   const settingsData = useSelector((state) => state.settingsSlice.data[0]);
-  console.log("settingsData", settingsData);
 
   return (
     <>
@@ -30,8 +29,8 @@ export default function Home() {
       </Head>
       <Hero />
       <Services />
-      <About settingsData={settingsData} />
       <Interested />
+      <About settingsData={settingsData} />
       <Blog />
     </>
   );

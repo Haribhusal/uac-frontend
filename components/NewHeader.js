@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useEffect, Fragment } from "react";
+import { useEffect,useState, Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { fetchServices } from "../store/services";
 import { fetchUserInterests } from "../store/userInterests";
-import {fetchSettings} from "../store/settings";
+import { fetchSettings } from "../store/settings";
 
 import { useSelector } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
@@ -18,6 +18,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [open, setOpen] = useState(false)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchServices());
@@ -27,11 +28,9 @@ export default function Example() {
 
   const settingsData = useSelector((state) => state.settingsSlice.data[0]);
 
-  
   const userInterestsData = useSelector(
     (state) => state.userInterestsSlice.data
   );
-  console.log("userInterestsData", userInterestsData);
   const servicesData = useSelector((state) => state.servicesSlice.data);
   const servicesFetchStatus = useSelector(
     (state) => state.servicesSlice.status
@@ -39,7 +38,7 @@ export default function Example() {
 
   return (
     <>
-      <div className="  bg-red-900 text-slate-200 sm:block md:flex justify-center gap-10 text-sm">
+      <div className="  bg-red-900 text-slate-200 sm:block md:flex justify-center p-5 md:p-0 gap-10 text-sm">
         <ul className="sm:block md:flex gap-5 items-center">
           <li className="flex items-center gap-2">
             <a
@@ -54,7 +53,8 @@ export default function Example() {
               href="mailto:info@uacktm.com"
               className="block transition-all py-2 hover:text-gray-200"
             >
-              <i className="las la-envelope"></i> {settingsData?.acf.company_email}
+              <i className="las la-envelope"></i>{" "}
+              {settingsData?.acf.company_email}
             </a>
           </li>
           <li className="flex items-center gap-2">
@@ -62,32 +62,33 @@ export default function Example() {
               href="tel:+977-01-5319152"
               className="block transition-all py-2 hover:text-gray-200"
             >
-              <i className="las la-phone"></i> {settingsData?.acf.company_contact_1}
+              <i className="las la-phone"></i>{" "}
+              {settingsData?.acf.company_contact_1}
             </a>
           </li>
         </ul>
       </div>
-      <Popover className="relative bg-white text-gray-800 shadow-md">
+      <Popover className="relative p-5 md:p-0 bg-white text-gray-800 shadow-md">
         <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between  md:justify-start md:space-x-10">
+          <div className="flex items-center justify-between  md:justify-start md:space-x-10 p-5 md:p-0">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link href="/" className="flex items-center gap-5 relative">
                 <Image
-                  className="sm:h-12  w-auto  md:h-24 bg-white shadow-md left-0 p-3 -translate-x-1/2 absolute z-10 rounded-md"
+                  className="h-12 w-auto  md:h-24 bg-white shadow-md left-0 p-0 md:p-3 -translate-x-1/2 absolute z-10 rounded-md"
                   src="/univa-logo.png"
                   alt="logo"
                   height={200}
                   width={200}
                 />
-                <span className="pl-16 sm:text-base md:text-base font-normal text-gray-800 leading-tight">
+                <span className="pl-10 md:pl-16 sm:text-base md:text-base font-normal text-gray-800 leading-tight">
                   Univa Education <br /> Consultancy
                 </span>
               </Link>
             </div>
             <div className="-my-2 -mr-2 md:hidden">
-              <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <Popover.Button className="inline-flex items-center justify-center rounded-md p-0 text-gray-800 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 <span className="sr-only">Open menu</span>
-                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                <i className="las la-bars text-3xl text-red-900 border-[1px] border-red-200 p-2 rounded-md"></i>
               </Popover.Button>
             </div>
             <Popover.Group as="nav" className="hidden space-x-10 md:flex">
@@ -200,7 +201,6 @@ export default function Example() {
                               <Link
                                 href={`/interested/${item.slug}`}
                                 key={item.id}
-
                               >
                                 <article className="wrapper flex gap-5 bg-white rounded-md group hover:bg-red-100 px-5 py-3 items-start transition-all">
                                   <i className="las la-briefcase  transition-all bg-red-100 text-red-900 p-3 rounded-md items-center group-hover:bg-red-900 group-hover:text-white"></i>
@@ -234,93 +234,13 @@ export default function Example() {
               </Link>
               <a
                 href="https://univa.vercel.app/"
-                className=" border-[1px] border-red-700 rounded-md text-red-700 transition-all ml-8  px-7 py-3 text-base font-medium"
+                className=" border-[1px] hover:bg-red-900 hover:border-red-900 hover:text-white border-red-700 rounded-md text-red-700 transition-all ml-8  px-7 py-3 text-base font-medium"
               >
                 Online Exam
               </a>
             </div>
           </div>
         </div>
-
-        <Transition
-          as={Fragment}
-          enter="duration-200 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-100 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <Popover.Panel
-            focus
-            className="absolute inset-x-0 z-30 top-0 origin-top-right transform p-2 transition md:hidden"
-          >
-            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className="px-5 pt-5 pb-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Image
-                      className="h-8 w-auto"
-                      src="/univa-logo.png"
-                      alt="Your Company"
-                      height={100}
-                      width={100}
-                    />
-                  </div>
-                  <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                      <span className="sr-only">Close menu</span>
-                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-6 py-6 px-5">
-                <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                  <a
-                    href="#"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Pricing
-                  </a>
-
-                  <a
-                    href="#"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Docs
-                  </a>
-                  {/* {resources.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-base font-medium text-gray-900 hover:text-gray-700"
-                    >
-                      {item.name}
-                    </a>
-                  ))} */}
-                </div>
-                <div>
-                  <a
-                    href="#"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                  >
-                    Sign up
-                  </a>
-                  <p className="mt-6 text-center text-base font-medium text-gray-500">
-                    Existing customer?
-                    <a
-                      href="#"
-                      className="text-indigo-600 hover:text-indigo-500"
-                    >
-                      Sign in
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Popover.Panel>
-        </Transition>
       </Popover>
     </>
   );

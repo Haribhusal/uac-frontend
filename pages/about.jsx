@@ -41,7 +41,7 @@ const AboutPage = () => {
               height="800"
               className="rounded-md w-full"
             />
-                <div className="leading-loose my-10">
+                <div className="leading-loose my-10 about-page">
                 {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
                 </div>
             <Team/>

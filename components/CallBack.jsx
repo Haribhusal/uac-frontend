@@ -31,15 +31,15 @@ const CallBack = () => {
     return (
         <>
             <form onSubmit={handleSubmit}
-                className="flex gap-5 items-center my-5">
+                className="flex flex-col justify-start items-start md:flex-row gap-5 my-5">
                 <input
                     required
                     id='contactNumber'
-                    placeholder='Enter your contact number'
+                    placeholder='Contact Number'
                     value={values.contactNumber}
                     onChange={handleChange}
                     type='tel'
-                    className=" min-w-[300px] bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
+                    className=" md:min-w-[200px]  bg-transparent border-b py-2 pl-4 focus:ring-0 rounded-md focus:outline-none focus:rounded-md focus:shadow-none ring-red-500 font-light text-gray-500"
                 />
                 <input
                     required
@@ -54,7 +54,7 @@ const CallBack = () => {
                     disabled={values.contactNumber == '' || values.fullName == ''}
                     onClick={() => setLoading(true)}
                     type='submit' value='submit' className="px-10 py-2 bg-red-700 gap-3 flex items-center text-gray-50 font-light rounded-md text-lg">
-                    Send me a call
+                        Request a callback
                     <i className={`las ${loading ? "la-spinner animate-spin" : "la-telegram-plane"} `}></i>
                 </button>
             </form >

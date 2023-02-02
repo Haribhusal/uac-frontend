@@ -56,7 +56,7 @@ const ContactForm = () => {
                 className="bg-transparent border-slate-300 rounded-md py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-0 font-light text-gray-500"
 
             />
-            <label for="message" class="mb-2 text-gray-500 font-light mt-4 dark:text-gray-50">Your Message<span class="text-red-500">*</span></label>
+            <label htmlFor="message" class="mb-2 text-gray-500 font-light mt-4 dark:text-gray-50">Your Message<span class="text-red-500">*</span></label>
             <textarea
                 required
                 placeholder='Enter your Message'

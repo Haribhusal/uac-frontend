@@ -5,9 +5,9 @@ import LatestUpdate from '../components/LatestUpdate'
 
 const Hero = () => {
     return (
-        <section className="hero flex items-stretch">
-            <div className="imagebanner w-[60%] relative fitImage">
-                <Image src='/univa-team.jpg' priority='false' alt='gallery' height={500} width={500} style={{ height: '100%' }} className="object-cover object-center absolute top-0 bottom-0 h-full w-full"></Image>
+        <section className="hero block md:flex items-stretch">
+            <div className="imagebanner w-full md:w-[60%] fitImage">
+                <Image src='/univa-team.jpg' priority='false' alt='gallery' height={500} width={500} className="h-full w-full max-h-[550px] object-cover object-center"></Image>
             </div>
             <LatestUpdate />
 

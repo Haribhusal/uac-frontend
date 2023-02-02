@@ -28,7 +28,7 @@ const Blog = () => {
         <section className="blog" id='blog'>
             <div className="imageBanner relative">
                 {/* <div className="overlay absolute top-0 left-0 h-full w-full bg-black opacity-70"></div> */}
-                <div className="bgBanner w-full object-cover object-center" style={{height: '60vh'}}>
+                <div className="bgBanner w-full object-cover object-center md:h-[450px] h-[200px]  ">
               
                 </div>
                 {/* <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 300'><rect fill='#ff7700' width='1600' height='900'/><polygon fill='#cc0000' points='957 450 539 900 1396 900'/><polygon fill='#aa0000' points='957 450 872.9 900 1396 900'/><polygon fill='#c50022' points='-60 900 398 662 816 900'/><polygon fill='#a3001b' points='337 900 398 662 816 900'/><polygon fill='#be0044' points='1203 546 1552 900 876 900'/><polygon fill='#9c0036' points='1203 546 1552 900 1162 900'/><polygon fill='#b80066' points='641 695 886 900 367 900'/><polygon fill='#960052' points='587 900 641 695 886 900'/><polygon fill='#b10088' points='1710 900 1401 632 1096 900'/><polygon fill='#8f006d' points='1710 900 1401 632 1365 900'/><polygon fill='#aa00aa' points='1210 900 971 687 725 900'/><polygon fill='#880088' points='943 900 1210 900 971 687'/></svg> */}
@@ -38,7 +38,7 @@ const Blog = () => {
                     </h3>
                 </div>
             </div>
-            <div className="blogWrapper relative -mt-72 grid grid-cols-3 px-10 mb-10 gap-10">
+            <div className="blogWrapper relative sm:-mt-96 md:-mt-72 grid sm:grid-cols-1 md:grid-cols-3 md:px-10 px-0 mb-10 gap-10">
 
                 {postStatus == "loading" ?
                     <div className=''>
@@ -50,7 +50,7 @@ const Blog = () => {
 
                     blogData.slice(0, 5).map((item) => (
 
-                        <Link href={`blog/${item.slug}`} key={item.id} className="shadow-md rounded p-10 bg-white group hover:shadow-lg">
+                        <Link href={`blog/${item.slug}`} key={item.id} className="shadow-md rounded md:p-10 p-5 bg-white group hover:shadow-lg">
 
                             <article className=''>
                                 <figure>

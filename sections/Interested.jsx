@@ -25,8 +25,8 @@ const Interested = () => {
         )
     }
     return (
-        <section id='interest' className="interestSelect bg-red-100 mt-10 px-10 gap-10 py-16 flex items-center min-h-[80vh]">
-            <div className="left  shadow-lg w-[25%] bg-white p-10 rounded-md">
+        <section id='interest' className="interestSelect bg-red-100 mt-10 md:px-10 sm:px-5  gap-10 md:py-16 sm:py-5  sm:block md:flex items-center min-h-[80vh]">
+            <div className="left  shadow-lg md:w-[25%] sm:w-full bg-white md:p-10 p-5 rounded-md">
                 <div className="heading mb-5">
                     <h3 className="title text-xl">You might be interested in</h3>
                 </div>
@@ -43,11 +43,11 @@ const Interested = () => {
 
                 </div>
             </div>
-            <div className="right w-[75%] ">
+            <div className="right md:w-[75%] sm:w-full ">
                 {userInterestsData?.length > 0 && userInterestsData.map((interest, index) => (
-                    <div className='flex items-center' key={index}>
+                    <div className='sm:block md:flex items-center' key={index}>
                         {activeService === interest.id &&
-                            <div className="info shadow-md rounded relative z-30 p-10 bg-white w-[60%] ">
+                            <div className="info shadow-md rounded relative z-30 md:p-10 p-5 bg-white sm:w-full md:w-[60%] ">
                                 <div className="heading">
                                     <h3 className="title text-3xl font-bold text-red-700 leading-normal">
                                         {interest.title.rendered}
@@ -65,9 +65,9 @@ const Interested = () => {
                                 </div>
                             </div>
                         }
-                        <div className="imagewrapper w-[40%]">
+                        <div className="imagewrapper sm:w-full md:w-[40%] p-5 md:p-0 ">
                             {activeService === interest.id &&
-                                <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500} style={{ height: "500px" }} className='w-full rounded-md object-cover'></Image>
+                                <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500}  className='w-full rounded-md object-cover h-[200px] md:h-[300px]'></Image>
                             }
                         </div>
 

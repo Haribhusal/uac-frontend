@@ -11,7 +11,6 @@ const SinglePost = () => {
   const router = useRouter();
   const id = router.query.id;
 
-  console.log('router',router);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,8 +19,6 @@ const SinglePost = () => {
 
   const allPosts = useSelector((state) => state.postsSlice.data);
   const singlePostData = allPosts.filter((item) => item.id === id);
-  console.log('allPosts', allPosts);  
-  console.log('singlePostData', singlePostData);
 
 
   return (

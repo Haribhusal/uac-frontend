@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       <div className="sm:px-3 md:px-10 bg-gray-900 text-white py-10">
-        <div className="flex md:flex-row sm:flex-col justify-between items-center sm:items-start">
+        <div className="sm:block md:flex p-5 md:p-0  justify-between items-center sm:items-start">
           <div>
             <h3 className="title text-3xl mt-0">
               {settingsData?.acf.footer_title}
@@ -29,14 +29,14 @@ const Footer = () => {
           </div>
           <Link
             href="/contact"
-            className="bg-red-600 shadow-lg hover:shadow-sm transition-all sm:mt-5 md:mt-0 px-10 h-16 py-5 rounded flex items-center"
+            className="bg-red-600 mt-5 md:mt-0  shadow-lg hover:shadow-sm transition-all sm:mt-10 px-10 h-16 py-5 rounded flex items-center"
           >
             Send your Query <i className="las la-arrow-right ml-3"></i>
           </Link>
         </div>
       </div>
       <div className=" sm:px-5 md:px-10 bg-gray-800 py-10 text-slate-400">
-        <div className="flex justify-between sm:flex-col md:flex-row gap-16">
+        <div className="justify-between sm:block md:flex gap-16 p-5 md:p-0">
           <div className="item flex-[2]">
             <h3 className="title mt-5 text-xl font-bold text-slate-100">
               {settingsData?.acf.website_title}
@@ -105,7 +105,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="my-3">
-                <Link href="/#blog">
+                <Link href="/blog">
                   <i className="las la-arrow-right mr-2"></i>
                   <span className="hover:ml-1 transition-all hover:text-white">
                     Read Our Blog
@@ -161,14 +161,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="md:px-10 text-sm sm:px-3 bg-gray-900 py-3 text-slate-400">
-        <div className="flex justify-between sm:flex-col md:flex-row">
+      <div className="md:px-10 p-5 text-sm sm:px-3 bg-gray-900 py-3 text-slate-400">
+        <div className="sm:block md:flex justify-between sm:flex-col md:flex-row">
           <div className="item">
             &copy; Univa Educational Consultants, {new Date().getFullYear()},
             All rights reserved.
           </div>
-          <div className="item">
-            <ul className="flex gap-5 sm:flex-col md:flex-row">
+          <div className="item mt-5 md:mt-0">
+            <ul className="md:flex sm:block  gap-5">
               <li>
                 <Link href="#" className="">
                   FAQs
@@ -186,7 +186,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="item">
+          <div className="item mt-5 md:mt-0">
             Designed by <Link href="#">Hari</Link>
           </div>
         </div>

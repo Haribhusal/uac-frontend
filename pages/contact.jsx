@@ -24,7 +24,7 @@ const contact = () => {
                     <h3 className="title text-3xl font-bold">Find us on Google Map</h3>
                 </div>
                 <div className="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.455121097055!2d85.32017391498775!3d27.70323088279367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a9bde1a17f%3A0x57da6340fa7a7a05!2sUniversity%20Academic%20Center%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1674514522241!5m2!1sen!2snp" width="100%" height="450" style={{border: '0', borderRadius: "10px"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.455121097055!2d85.32017391498775!3d27.70323088279367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a9bde1a17f%3A0x57da6340fa7a7a05!2sUniversity%20Academic%20Center%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1674514522241!5m2!1sen!2snp" width="100%" height="450" style={{ border: '0', borderRadius: "10px" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
         </>

@@ -7,8 +7,18 @@
 body,html{
     scroll-behavior: smooth;
 }
+
 body{
     font-family: 'Manrope', sans-serif;
+}
+.about-page h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.about-page h2{
+    font-size: 24px;
+    font-weight: bold;
+
 }
 .bgShape{
     /* background-position: center; */
