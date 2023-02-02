@@ -29,7 +29,7 @@ const SinglePost = () => {
             <h3 className="title text-red-700 leading-snug my-0 text-3xl font-bold mb-5">
               {singlePostData[0]?.title.rendered}
             </h3>
-            <div className="meta bg-red-100 px-5 py-3 mb-5 rounded inline-flex items-center gap-10">
+            <div className="meta bg-red-100 text-red-800 px-5 py-3 mb-5 rounded inline-flex items-center gap-10">
               <div className="item flex items-center gap-2">
                 <i className="las la-calendar"></i>
                 {moment.utc(singlePostData[0]?.date).local().startOf('seconds').fromNow()}

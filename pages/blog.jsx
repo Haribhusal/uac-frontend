@@ -44,7 +44,7 @@ const ListingPage = () => {
                                 </div>
                                 <div className="down">
                                     <div className="info mt-3 flex gap-5">
-                                        <div className="time flex items-center gap-2  rounded-md bg-red-100 px-5 py-3">
+                                        <div className="time flex items-center gap-2  rounded-md text-red-800 bg-red-100 px-5 py-3">
                                             <button className=''>Read More</button>
                                             <i className="las la-arrow-right"></i>
 
