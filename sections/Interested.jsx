@@ -12,7 +12,7 @@ const Interested = () => {
         dispatch(fetchUserInterests());
     }, [dispatch]);
     const userInterestsData = useSelector((state) => state.userInterestsSlice.data);
-    const [activeService, setActiveService] = useState(32);
+    const [activeService, setActiveService] = useState(129);
 
 
     function Box({ children }) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 import { useEffect,useState, Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
@@ -18,6 +18,8 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const router = useRouter();
+  console.log(router)
   const [open, setOpen] = useState(false)
   const dispatch = useDispatch();
   useEffect(() => {
