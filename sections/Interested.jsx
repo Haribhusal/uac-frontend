@@ -47,7 +47,7 @@ const Interested = () => {
                 {userInterestsData?.length > 0 && userInterestsData.map((interest, index) => (
                     <div className='sm:block md:flex items-center' key={index}>
                         {activeService === interest.id &&
-                            <div className="info shadow-md rounded relative z-30 md:p-10 p-5 bg-white sm:w-full md:w-[60%] ">
+                            <div className="info shadow-md rounded relative m-0 z-30 md:p-10 p-5 bg-white sm:w-full md:w-[60%] ">
                                 <div className="heading">
                                     <h3 className="title text-3xl font-bold text-red-700 leading-normal">
                                         {interest.title.rendered}
@@ -65,7 +65,7 @@ const Interested = () => {
                                 </div>
                             </div>
                         }
-                        <div className="hidden md:block imagewrapper sm:w-full md:w-[40%] p-0 px-5 mt-5 md:p-0 ">
+                        <div className="hidden md:block imagewrapper sm:w-full md:w-[40%] p-0 px-5 md:p-0 ">
                             {activeService === interest.id &&
                                 <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500}  className='w-full rounded-md object-cover h-[200px] md:h-[450px]'></Image>
                             }
