@@ -12,7 +12,8 @@ const Interested = () => {
         dispatch(fetchUserInterests());
     }, [dispatch]);
     const userInterestsData = useSelector((state) => state.userInterestsSlice.data);
-    const [activeService, setActiveService] = useState(129);
+    const [activeService, setActiveService] = useState(155);
+    console.log(userInterestsData)
 
 
     function Box({ children }) {
@@ -67,7 +68,7 @@ const Interested = () => {
                         }
                         <div className="hidden md:block imagewrapper sm:w-full md:w-[40%] p-0 px-5 md:p-0 ">
                             {activeService === interest.id &&
-                                <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500}  className='w-full rounded-md object-cover h-[200px] md:h-[450px]'></Image>
+                                <Image src={interest.better_featured_image?.source_url} alt="image" height={200} width={500} className='w-full rounded-md object-cover h-[200px] md:h-[450px]'></Image>
                             }
                         </div>
 

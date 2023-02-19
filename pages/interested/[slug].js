@@ -22,7 +22,7 @@ const SingleInterestedPage = () => {
   const singleInterestedData = allInterestedData.filter(
     (item) => item.slug == slug
   );
-  console.log('singleInterestedData', singleInterestedData)
+  console.log("singleInterestedData", singleInterestedData);
 
   return (
     <>
@@ -34,17 +34,13 @@ const SingleInterestedPage = () => {
           key="title"
         />
         <link rel="icon" href="/univa-logo.png" />
-
       </Head>
       <div className="p-0 md:p-10">
         <div className="container p-5 md:p-10 bg-white rounded border-[1px] border-red-300 border-dashed">
           <div className="wrapper flex flex-col md:flex-row items-start gap-0 md:gap-10">
             <div className="imagearea sm:w-full md:w-[40%]  md:sticky  top-32">
               <Image
-                src={
-                  singleInterestedData[0]?.better_featured_image?.media_details
-                    .sizes.large.source_url
-                }
+                src={singleInterestedData[0]?.better_featured_image?.source_url}
                 width="500"
                 alt="image details"
                 height="800"
