@@ -132,6 +132,19 @@ const Header = () => {
               </li>
               <li>
                 <Link
+                  href="/team"
+                  onClick={() => setOpen(!open)}
+                  className={` ${
+                    router.pathname == "/team"
+                      ? "text-red-700"
+                      : "text-gray-700"
+                  } block py-2 pl-3 pr-4  rounded md:bg-transparent md:p-0`}
+                >
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#interest"
                   onClick={() => setOpen(!open)}
                   className={` ${

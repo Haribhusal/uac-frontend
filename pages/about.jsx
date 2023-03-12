@@ -5,11 +5,8 @@ import { useDispatch } from "react-redux";
 import { fetchPages } from "../store/pages";
 import { useSelector } from "react-redux";
 import { useRouter } from 'next/router';
-import moment from 'moment/moment';
-import Link from 'next/link';
 import Image from 'next/image';
 import ReactHtmlParser from "react-html-parser";
-import Team from '../sections/Team';
 import Head from 'next/head';
 
 
@@ -56,7 +53,6 @@ const AboutPage = () => {
                     <div className="leading-loose my-10 about-page">
                         {ReactHtmlParser(aboutPageData[0]?.content.rendered)}
                     </div>
-                    <Team />
 
                 </div>
             </main>

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchSettings } from "../store/settings";
 
 import { useDispatch, useSelector } from "react-redux";
 
 const Footer = () => {
+  const [showTranslate, setShowTranslate] = useState(false)
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,8 +16,26 @@ const Footer = () => {
 
 
 
+  useEffect(() => {
+    const googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          autoDisplay: true,
+        },
+        "google_translate_element"
+      );
+    };
+
+  }, []);
   return (
     <>
+      <div className="fixed right-0 bottom-10 cursor-pointer h-10 w-10 bg-green-400 " onClick={() => setShowTranslate(!showTranslate)}>
+        <i className="las la-language text-3xl"></i>
+      </div>
+
+
+      <div id="google_translate_element" className='fixed right-0 bottom-0 z-40 bg-red-400'></div>
       <div className="sm:px-3 md:px-10 bg-gray-900 text-white py-10">
         <div className="sm:block md:flex p-5 md:p-0  justify-between items-center sm:items-start">
           <div>

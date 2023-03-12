@@ -7,7 +7,7 @@ const About = ({ settingsData }) => {
         <section className="about block md:flex flex-col md:flex-row items-center bg-white gap-5 md:gap-10">
             <div className="quicknews p-5 md:p-0 md:w-[50%] sm:w-full md:relative ">
                 <div className="pic1 left-10">
-                    <Image src='/univa-team.jpg' width={1000} alt='image info' height={500} priority="false" className='min-h-full'></Image>
+                    <Image src='/classroom.jpg' width={1000} alt='image info' height={500} priority="false" className='min-h-full'></Image>
                 </div>
             </div>
             <div className="imagebanner sm:w-full md:w-[60%] h-full md:p-16 p-5 bg-white">

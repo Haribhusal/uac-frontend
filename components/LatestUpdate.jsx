@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchPosts } from "../store/posts";
+import { fetchPosts } from "./../store/posts";
 import { useSelector } from "react-redux";
 import Skeleton from 'react-loading-skeleton'
 import moment from 'moment/moment';
@@ -45,8 +45,8 @@ const LatestUpdate = () => {
                                     <div className="wrap">
 
                                         <h3 className="title group-hover:text-red-700 text-base	 font-normal m-0  leading-relaxed">
-                                            {item.title.rendered.length > 120 ? `${item.title.rendered.slice(0, 120)}...` : item.title.rendered.slice(0, 120) }
-                                            <span className=' text-sm rounded text-gray-500 group-hover:text-gray-500'> Posted: 
+                                            {item.title.rendered.length > 120 ? `${item.title.rendered.slice(0, 120)}...` : item.title.rendered.slice(0, 120)}
+                                            <span className=' text-sm rounded text-gray-500 group-hover:text-gray-500'> Posted:
                                                 {moment.utc(item.date).local().startOf('seconds').fromNow()}</span>
                                         </h3>
                                     </div>

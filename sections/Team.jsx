@@ -31,21 +31,21 @@ const Team = () => {
 
     return (
         <section>
-            <h3 className="title text-3xl mb-5 font-bold text-center md:text-left">Our Team</h3>
 
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-10'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-3 gap-10'>
                 {teamDataStatus == "loading" ?
                     <Skeleton count={3} wrapper={Box} /> // Five-line loading skeleton
                     :
-                    teamData.slice(0, 5).map((item) => (
+                    teamData.slice(0, 100).map((item) => (
                         <div className="item group text-center p-10 border-2 border-dashed rounded-md" key={item.id}>
 
-                            <Image src={item.better_featured_image.media_details.sizes.medium.source_url} height={300} width={300} alt={''} className="mx-auto h-56 w-56 rounded-full object-cover object-center ring-2 ring-red-700" />
+                            <Image src={item.better_featured_image?.media_details?.sizes?.thumbnail?.source_url} height={1000} width={1000} alt={''} className="mx-auto h-40 w-40 rounded-full object-cover object-center ring-2 ring-red-700" />
                             <div className="info mt-5">
 
                                 <h3 className='title text-2xl text-red-800 font-bold m-0'>
                                     {item.title.rendered}
                                 </h3>
+
                                 <div className="des text-slate-500">
                                     {item.acf.member_role}
                                 </div>
@@ -60,7 +60,7 @@ const Team = () => {
                                         </div>
                                     </Link>
                                     <Link href={`mailto:${item.acf.member_email}`} target="_blank">
-                                    <div className="item h-12 w-12 group-hover:text-white delay-200 group-hover:bg-red-700 transition-all text-red-700 rounded-full flex items-center justify-center bg-red-100">
+                                        <div className="item h-12 w-12 group-hover:text-white delay-200 group-hover:bg-red-700 transition-all text-red-700 rounded-full flex items-center justify-center bg-red-100">
                                             <i className="las la-envelope text-2xl"></i>
                                         </div>
                                     </Link>

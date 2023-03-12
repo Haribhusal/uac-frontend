@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchTeam = createAsyncThunk("team/teamMember", async () => {
   const response = await axios.get(
-    "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/team"
+    "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/team?per_page=100"
   );
   return response.data;
 });

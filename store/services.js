@@ -1,12 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchServices = createAsyncThunk("services/fetchservices", async () => {
-  const response = await axios.get(
-    "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/services"
-  );
-  return response.data;
-});
+export const fetchServices = createAsyncThunk(
+  "services/fetchservices",
+  async () => {
+    const response = await axios.get(
+      "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/services?per_page=100"
+    );
+    return response.data;
+  }
+);
 
 const servicesSlice = createSlice({
   name: "services",
