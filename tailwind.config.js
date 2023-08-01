@@ -6,8 +6,12 @@ module.exports = {
     "./sections/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
   ],
+  corePlugins: {
+    aspectRatio: false,
+  },
   theme: {
     extend: {},
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin"), require('@tailwindcss/aspect-ratio'),],
+
 };
