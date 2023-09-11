@@ -6,6 +6,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "tailwindcss/tailwind.css";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import store from "../store";
 
