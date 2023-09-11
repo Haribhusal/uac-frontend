@@ -3,8 +3,9 @@ import axios from "axios";
 
 export const fetchPages = createAsyncThunk("allpages/fetchData", async () => {
   const response = await axios.get(
-    "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/pages"
+    "http://admin.uacktm.com/wp-json/wp/v2/pages"
   );
+
   return response.data;
 });
 
@@ -17,8 +18,8 @@ const pagesSlice = createSlice({
   },
   reducers: {
     getAboutPageData: (state) => {
-      return state
-    }
+      return state;
+    },
   },
   extraReducers: (builder) => {
     builder

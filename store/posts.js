@@ -3,8 +3,9 @@ import axios from "axios";
 
 export const fetchPosts = createAsyncThunk("post/fetchPosts", async () => {
   const response = await axios.get(
-    "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/posts?per_page=100"
+    "http://admin.uacktm.com/wp-json/wp/v2/posts?per_page=100"
   );
+
   return response.data;
 });
 

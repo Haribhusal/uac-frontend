@@ -5,7 +5,7 @@ export const fetchSettings = createAsyncThunk(
   "settings/fetchSettings",
   async () => {
     const response = await axios.get(
-      "https://fitnesshoursnepal.com/univa/wp-json/wp/v2/settings"
+      "http://admin.uacktm.com/wp-json/wp/v2/settings"
     );
     return response.data;
   }
