@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchPosts = createAsyncThunk("post/fetchPosts", async () => {
   const response = await axios.get(
-    "http://admin.uacktm.com/wp-json/wp/v2/posts?per_page=100"
+    "https://admin.uacktm.com/wp-json/wp/v2/posts?per_page=100"
   );
 
   return response.data;

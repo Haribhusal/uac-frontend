@@ -5,7 +5,7 @@ export const fetchServices = createAsyncThunk(
   "services/fetchservices",
   async () => {
     const response = await axios.get(
-      "http://admin.uacktm.com/wp-json/wp/v2/services?per_page=100"
+      "https://admin.uacktm.com/wp-json/wp/v2/services?per_page=100"
     );
     return response.data;
   }
